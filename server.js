@@ -1,25 +1,36 @@
+/*
+ * Kevin Wu, Darian Shi, Sj Jin Bang, Viwing Zheng
+ * CS375/Quorum/server.js
+ */
+
+// Imports
 const express = require("express");
 const mysql = require("mysql");
 const bodyParser = require("body-parser");
 const path = require("path");
 
+// Initialize server
 const app = express();
 app.use(bodyParser.json());
-const portNum = 8080;
-
-let filePath = "client/public/";
+let filePath = "public";
 app.use(express.static(filePath));
 
-app.get("/dummy", (req, res) => {
-    res.sendFile(path.resolve(filePath + "dummy.html/"));
+// Start server
+const portNum = 8080;
+app.listen(portNum,() => {
+    console.log("Listening on port " + portNum);
 });
 
+
+
+// Handle check in
 app.get("/checkin", (req, res) => {
     let eventID = req.query.eventID;
     res.send(eventID);
     console.log(eventID);
 });
 
+// Handle account sign up
 app.post("/signup", (req, res) => {
     let username = req.body.username;
     let password = req.body.password;
@@ -28,6 +39,3 @@ app.post("/signup", (req, res) => {
     console.log("Password: " + password);
 });
 
-app.listen(portNum,() => {
-    console.log("Listening on port " + portNum);
-});
