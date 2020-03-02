@@ -17,25 +17,24 @@ app.use(express.static(filePath));
 
 // Start server
 const portNum = 8080;
-app.listen(portNum,() => {
-    console.log("Listening on port " + portNum);
+app.listen(portNum, () => {
+  console.log("Listening on port " + portNum);
 });
-
 
 
 // Handle check in
 app.get("/checkin", (req, res) => {
-    let eventID = req.query.eventID;
-    res.send(eventID);
-    console.log(eventID);
+  let eventID = req.query.eventID;
+  res.send(eventID);
+  console.log(eventID);
 });
 
 // Handle account sign up
 app.post("/signup", (req, res) => {
-    let username = req.body.username;
-    let password = req.body.password;
+  let username = req.body.username;
+  let password = req.body.password;
 
-    console.log("Username: " + username);
-    console.log("Password: " + password);
+  console.log("Username: " + username);
+  console.log("Password: " + password);
 });
 
