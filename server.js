@@ -21,6 +21,15 @@ app.listen(portNum, () => {
   console.log("Listening on port " + portNum);
 });
 
+// Landing page
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, filePath, "login.html"));
+});
+
+// Sign-up page
+app.get("/signup", (req, res) => {
+  res.sendFile(path.join(__dirname, filePath, "signup.html"));
+});
 
 // Handle check in
 app.get("/checkin", (req, res) => {
