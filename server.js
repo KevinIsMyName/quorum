@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
 
 // Sign-up page
 app.get("/signup", (req, res) => {
-  res.sendFile(path.join(__dirname, filePath, "signup.html"));
+  res.sendFile(path.join(__dirname, filePath, "register.html"));
 });
 
 // Handle check in
