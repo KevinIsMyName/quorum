@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Quorum</title>
+    <script src="./scripts/dashboard.js"></script>
 </head>
 <body>
     <div id="topnav"></div>
@@ -14,11 +15,11 @@
             what student organizations you're apart of and what events you've attended, or edit your profile.</p>
         </header>
         <div>
-            <button id="checkin">Check-in</button>
-            <button id="involvement">Your Student Organizations</button>
-            <button id="editProfile">Edit Profile</button>
-            <button id="createEvent">Create a New Event</button>
-            <button id="editOrgProfile">Edit Student Organization Profile</button>
+            <button id="checkin" onclick="checkin()">Check-in</button>
+            <button id="involvement" onclick="involvement()">Your Student Organizations</button>
+            <button id="editProfile" onclick="editProfile()">Edit Profile</button>
+            <button id="createEvent" onclick="createEvent()">Create a New Event</button>
+            <button id="editOrgProfile" onclick="editOrgProfile()">Edit Student Organization Profile</button>
         </div>
     </div>
 </body>
