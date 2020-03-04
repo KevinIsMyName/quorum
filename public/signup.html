@@ -15,48 +15,151 @@
         <br>
         <form>
             <h3>Login details</h3><br>
-            <div><label>Username: </label><input type="text" placeholder="Username"></div>
-            <div><label>Email address: </label><input type="email" placeholder="Email address"></div>
-            <div><label>Password: </label><input type="password" placeholder="Password"></div>
-            <div><label>Confirm password: </label><input type="password" placeholder="Confirm password"></div>
+            <div><label>Username: </label><input type="text"></div>
+            <div><label>Email address: </label><input type="email"></div>
+            <div><label>Password: </label><input type="password"></div>
+            <div><label>Confirm password: </label><input type="password"></div>
             <br>
             <div><h3>User profile</h3></div>
-            <div><label>First name: </label><input type="text" placeholder="First name"></div>
-            <div><label>Last name: </label><input type="text" placeholder="Last name"></div>
-            <div><label>Age: </label><input type="number" max="100" min="18" placeholder="Age"></div>
+            <div><label>First name: </label><input type="text"></div>
+            <div><label>Last name: </label><input type="text"></div>
+            <div><label>Age: </label><input type="number" max="100" min="18"></div>
             <form>
                 Gender
                 <div><label for="male"></label><input type="radio" id="male" name="gender" value="male">Male</div>
-                <div><label for="female"></label><input type="radio" id="female" name="gender" value="female">Female</div>
-                <div><label for="otherGender"></label><input type="radio" id="otherGender" name="gender" value="male">Other</div>
+                <div><label for="female"></label><input type="radio" id="female" name="gender" value="female">Female
+                </div>
+                <div><label for="otherGender"></label><input type="radio" id="otherGender" name="gender" value="male">Other
+                </div>
             </form>
             <br>
             <form>
                 <label for="gradMonth">
                 </label>
-                    Graduation date: <input type="month" id="gradMonth" min="1979-12-31" max="2030-12-31"
-                                            placeholder="Graduation date">
+                Graduation date: <input type="month" id="gradMonth" min="1979-12-31" max="2030-12-31">
             </form>
             <form>
                 Major
                 <select>
-                    <option></option>
+                    <option>Accounting (BSBA)</option>
+                    <option>Air Force ROTC</option>
+                    <option>Animation & Visual Effects (BS)</option>
+                    <option>Architectural Engineering (BSAE)</option>
+                    <option>Architecture (BArch)</option>
+                    <option>Army ROTC</option>
+                    <option>Art History (BA, BS, BA/MS)</option>
+                    <option>Behavioral Health Counseling (BS)</option>
+                    <option>Biological Sciences (BS)</option>
+                    <option>Biomedical Engineering (BS)</option>
+                    <option>Business (General) (BSBA)</option>
+                    <option>Business and Engineering (BSBAE)</option>
+                    <option>Business Analytics (co-major) (BSBA)</option>
+                    <option>Business Administration (BSBA)</option>
+                    <option>Business Economics (co-major) (BSBA)</option>
+                    <option>Chemical Engineering (BSCHE)</option>
+                    <option>Chemistry (BA, BS)</option>
+                    <option>Chemistry-Biochemistry Concentration (BS)</option>
+                    <option>Civil Engineering (BSCIV)</option>
+                    <option>Communication (BA, BS)</option>
+                    <option>Computer Engineering (BSCE)</option>
+                    <option>Computer Science (BACS, BSCS)</option>
+                    <option>Computing and Security Technology (BSCST)</option>
+                    <option>Construction Management (BSCMGT)</option>
+                    <option>Criminology and Justice Studies (BS)</option>
+                    <option>Culinary Arts & Science (BSCAS)</option>
+                    <option>Custom-Designed Major (BS)</option>
+                    <option>Dance (BS)</option>
+                    <option>Data Science (BS)</option>
+                    <option>Design and Merchandising (BS)</option>
+                    <option>Design of Learning Technologies (BS)</option>
+                    <option>Digital Media (BS/MS)</option>
+                    <option>Economics (BAECON, BSECON, BS/JD)</option>
+                    <option>Electrical Engineering (BSEE)</option>
+                    <option>Elementary Education (BS)</option>
+                    <option>Engineering (BSE)</option>
+                    <option>Engineering Management (BS/MS)</option>
+                    <option>Engineering Technology (BSET)</option>
+                    <option>English (BA)</option>
+                    <option>English (BA) / Publishing (MA)</option>
+                    <option>Entertainment and Arts Management (BS)</option>
+                    <option>Entrepreneurship and Innovation (BA)</option>
+                    <option>Entrepreneurship & Innovation 3-year Option (BA)</option>
+                    <option>Environmental Engineering (BSENE)</option>
+                    <option>Environmental Science (BS)</option>
+                    <option>Environmental Studies and Sustainability (BA)</option>
+                    <option>Fashion Design (BS)</option>
+                    <option>Film and TV Production (BS)</option>
+                    <option>Finance (BSBA)</option>
+                    <option>Game Design and Production (BS)</option>
+                    <option>General Business (BSBA)</option>
+                    <option>General Studies (BS)</option>
+                    <option>Geoscience (BS)</option>
+                    <option>Global Studies (BA)</option>
+                    <option>Global Studies (BA) / Public Health (MPH)</option>
+                    <option>Graphic Design (BS)</option>
+                    <option>Health Sciences (BS)</option>
+                    <option>Health Services Administration (BS)</option>
+                    <option>History (BA)</option>
+                    <option>Hospitality Management (BSHM)</option>
+                    <option>Information Systems (BS)</option>
+                    <option>Interactive Digital Media (BS)</option>
+                    <option>International Business (BSBA)</option>
+                    <option>Interior Design (BS)</option>
+                    <option>Legal Studies (BS)</option>
+                    <option>Management Information Systems (BSBA)</option>
+                    <option>Marketing (BSBA)</option>
+                    <option>Materials Science and Engineering (BSMSE)</option>
+                    <option>Mathematics (BA, BS)</option>
+                    <option>Mechanical Engineering (BSME)</option>
+                    <option>Music Industry (BS)</option>
+                    <option>Navy ROTC</option>
+                    <option>Nursing (BSN)</option>
+                    <option>Nursing: RN-MSN Bridge Program</option>
+                    <option>Nursing: Accelerated RN/BSN/MSN</option>
+                    <option>Nutrition and Foods (BS)</option>
+                    <option>Nutrition Sciences: Accelerated BS/MS</option>
+                    <option>Operations and Supply Chain Management (BSBA)</option>
+                    <option>Organizational Management (co-major) (BSBA)</option>
+                    <option>Philosophy (BA)</option>
+                    <option>Philosophy, Politics and Economics</option>
+                    <option>Photography (BS)</option>
+                    <option>Physics (BS)</option>
+                    <option>Political Science (BA)</option>
+                    <option>Product Design (BS)</option>
+                    <option>Psychology (BS)</option>
+                    <option>Public Health (BS)</option>
+                    <option>Public Health: Accelerated BS/MPH</option>
+                    <option>Real Estate Management and Development (BSBA)</option>
+                    <option>ROTC (Air Force, Army, Navy)</option>
+                    <option>Screenwriting & Playwriting (BS)</option>
+                    <option>Sociology (BA)</option>
+                    <option>Software Engineering (BS)</option>
+                    <option>Sport Business (BSBA)</option>
+                    <option>Systems Engineering (BS/MS)</option>
+                    <option>Teacher Education (BS)</option>
+                    <option>Technology Innovation Management (co-major) (BS)</option>
+                    <option>Virtual Reality & Immersive Media (BS)</option>
+                    <option>Westphal Studies Program (BS)</option>
                 </select>
             </form>
             <br>
 
             <div><h3>Emergency contact</h3></div>
-            <div>Fullname: <input type="text" placeholder="Full name"></div>
-            <div>Phone number: <input type="text" placeholder="Phone number"></div>
+            <div>Fullname: <input type="text"></div>
+            <div>Phone number: <input type="text"></div>
             <!-- This phone number probably needs to be regex checked!-->
             <form>
                 Relationship:
                 <div><label for="parentGuard"></label><input type="radio" id="parentGuard" name="Parent/Guardian"
-                                                value="Parent/Guardian">Parent/Guardian</div>
-                <div><label for="sibling"></label><input type="radio" id="sibling" name="Sibling" value="Sibling">Sibling</div>
-                <div><label for="friend"></label><input type="radio" id="friend" name="Friend" value="Friend">Friend</div>
+                                                             value="Parent/Guardian">Parent/Guardian
+                </div>
+                <div><label for="sibling"></label><input type="radio" id="sibling" name="Sibling" value="Sibling">Sibling
+                </div>
+                <div><label for="friend"></label><input type="radio" id="friend" name="Friend" value="Friend">Friend
+                </div>
                 <div><label for="otherRelation"></label><input type="radio" id="otherRelation" name="Other"
-                                                  value="Other">Other</div>
+                                                               value="Other">Other
+                </div>
             </form>
         </form>
         <input type="submit" value="Sign up!">
