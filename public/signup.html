@@ -9,12 +9,62 @@
         <link rel="manifest" href="resource/site.webmanifest">
     </head>
     <body>
-        Sign up for an account.<br>
-        <input type="text" placeholder="Email"><br>
-        <input type="text" placeholder="Username"><br>
-        <input type="password" placeholder="Password"><br>
-        <input type="password" placeholder="Confirm Passwor d"><br>
+        <h2>Quorum</h2>
+        <div>Sign up for a Quorum account.</div>
 
+        <br>
+        <form>
+            <h3>Login details</h3><br>
+            <div><label>Username: </label><input type="text" placeholder="Username"></div>
+            <div><label>Email address: </label><input type="email" placeholder="Email address"></div>
+            <div><label>Password: </label><input type="password" placeholder="Password"></div>
+            <div><label>Confirm password: </label><input type="password" placeholder="Confirm password"></div>
+            <br>
+            <div><h3>User profile</h3></div>
+            <div><label>First name: </label><input type="text" placeholder="First name"></div>
+            <div><label>Last name: </label><input type="text" placeholder="Last name"></div>
+            <div><label>Age: </label><input type="number" max="100" min="18" placeholder="Age"></div>
+            <form>
+                Gender
+                <div><label for="male"></label><input type="radio" id="male" name="gender" value="male">Male</div>
+                <div><label for="female"></label><input type="radio" id="female" name="gender" value="female">Female</div>
+                <div><label for="otherGender"></label><input type="radio" id="otherGender" name="gender" value="male">Other</div>
+            </form>
+            <br>
+            <form>
+                <label for="gradMonth">
+                </label>
+                    Graduation date: <input type="month" id="gradMonth" min="1979-12-31" max="2030-12-31"
+                                            placeholder="Graduation date">
+            </form>
+            <form>
+                Major
+                <select>
+                    <option></option>
+                </select>
+            </form>
+            <br>
+
+            <div><h3>Emergency contact</h3></div>
+            <div>Fullname: <input type="text" placeholder="Full name"></div>
+            <div>Phone number: <input type="text" placeholder="Phone number"></div>
+            <!-- This phone number probably needs to be regex checked!-->
+            <form>
+                Relationship:
+                <div><label for="parentGuard"></label><input type="radio" id="parentGuard" name="Parent/Guardian"
+                                                value="Parent/Guardian">Parent/Guardian</div>
+                <div><label for="sibling"></label><input type="radio" id="sibling" name="Sibling" value="Sibling">Sibling</div>
+                <div><label for="friend"></label><input type="radio" id="friend" name="Friend" value="Friend">Friend</div>
+                <div><label for="otherRelation"></label><input type="radio" id="otherRelation" name="Other"
+                                                  value="Other">Other</div>
+            </form>
+        </form>
+        <input type="submit" value="Sign up!">
+
+        <h2> Notes: </h2>
         More profile details here that we will also need to extract and put into the SQL database
+
+        First name,last name, username, password, email address, graduation year, ethnicity, major, age, gender,
+        emergency contact first and last name, phoneNum, relationship
     </body>
 </html>
