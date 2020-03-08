@@ -1,6 +1,8 @@
-const btnCheck = document.getElementById("btnCheck");
+const checkBtn = document.getElementById("checkBtn");
 let eventCode = document.getElementById("eventCode");
 
-btnCheck.addEventListener("click", function() {
-    
-});
+function checkCode(code) {
+
+}
+
+btnCheck.addEventListener("click", checkCode(eventCode));
