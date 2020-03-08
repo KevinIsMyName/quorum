@@ -1,23 +1,15 @@
-
 function checkin() {
-    var xhr = new XMLHttpRequest();
-    xhr.addEventListener("load", responseReceivedHandler);
-    xhr.open("GET", "getroute?route=" + selected);
-    xhr.send();
+    window.location.assign("checkin.html");
 }
-
 function involvement() {
-
+    window.location.assign("involvement.html");
 }
-
 function editProfile() {
-
+    window.location.assign("userProfile.html");
 }
-
-function createEvent() {
-
+function newEvent() {
+    window.location.assign("newEvent.html");
 }
-
 function editOrgProfile() {
-
+    window.location.assign("orgProfile.html");
 }
