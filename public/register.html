@@ -14,7 +14,7 @@
         <div>Register for a Quorum account.</div>
 
         <br>
-<!--        <form>-->
+        <form>
             <h3>Login details</h3><br>
             <div><label>Username: </label><input id="userName" type="text"></div>
             <div><label>Email address: </label><input id="email" type="email"></div>
@@ -254,19 +254,7 @@
             <div><h3>Emergency contact</h3></div>
             <div>Fullname: <input id="emerName" type="text"></div>
             <div>Phone number: <input id="emerPhone" type="text"></div>
-            <!-- This phone number probably needs to be regex checked!-->
             <form>
-<!--                Relationship:-->
-<!--                <div><label for="parentGuard"></label><input type="radio" id="parentGuard" name="Parent/Guardian"-->
-<!--                                                             value="Parent/Guardian">Parent/Guardian-->
-<!--                </div>-->
-<!--                <div><label for="Sibling"></label><input type="radio" id="Sibling" name="Sibling" value="Sibling">Sibling-->
-<!--                </div>-->
-<!--                <div><label for="Friend"></label><input type="radio" id="Friend" name="Friend" value="Friend">Friend-->
-<!--                </div>-->
-<!--                <div><label for="OtherRelation"></label><input type="radio" id="OtherRelation" name="Other"-->
-<!--                                                               value="Other">Other-->
-<!--                </div>-->
                 Relationship
                 <div><label for="parentGuard"></label><input type="radio" id="parentGuard" name="relationship" value="Parent/Guardian">Parent/Guardian</div>
                 <div><label for="sibling"></label><input type="radio" id="sibling" name="relationship" value="Sibling">Sibling
@@ -276,7 +264,7 @@
                 <div><label for="other"></label><input type="radio" id="other" name="relationship" value="Other">Other
                 </div>
             </form>
-<!--        </form>-->
+        </form>
         <input type="submit" id="submitButton" value="Register!">
         <h2> Notes: </h2>
         More profile details here that we will also need to extract and put into the SQL database<br>
