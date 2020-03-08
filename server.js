@@ -1,5 +1,5 @@
 /*
- * Kevin Wu, Darian Shi, Sj Jin Bang, Viwing Zheng
+ * Kevin Wu, Darian Shi, Su Jin Bang, Viwing Zheng
  * CS375/Quorum/server.js
  */
 
