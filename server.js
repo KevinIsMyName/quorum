@@ -33,9 +33,9 @@ app.get("/signup", (req, res) => {
 
 // Handle check in
 app.get("/checkin", (req, res) => {
-  let eventID = req.query.eventID;
-  res.send(eventID);
-  console.log(eventID);
+  let eventCode = req.query.eventCode;
+  res.send(eventCode);
+  console.log(eventCode);
 });
 
 // Handle account sign up
