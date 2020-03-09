@@ -1,21 +1,21 @@
 const submitButton = document.getElementById("submitButton");
-let username = document.getElementById("userName").value;
-let emailAddr = document.getElementById("email").value;
-let password = document.getElementById("password").value;
-let confirmPassword = document.getElementById("confirmPassword").value;
-let firstName = document.getElementById("firstName").value;
-let lastName = document.getElementById("lastName").value;
-let age = parseInt(document.getElementById("age").value);
+let username = "";
+let emailAddr = "";
+let password = "";
+let confirmPassword = "";
+let firstName = "";
+let lastName = "";
+let age = "";
 // Get gender
-let genderButtons = document.getElementsByName("gender");
+const genderButtons = document.getElementsByName("gender");
 let gender = "";
 // Get grad month
-let graduation = document.getElementsByName("gradMonth");
-let major = document.getElementById("major").value;
-let emerName = document.getElementById("emerName").value;
-let emerPhoneNum = document.getElementById("emerPhone").value;
+let graduation = "";
+let major = "";
+let emerName = "";
+let emerPhoneNum = "";
 // Get emergency contact relationship relationship
-let emerContRelatButtons = document.getElementsByName("relationship");
+const emerContRelatButtons = document.getElementsByName("relationship");
 let emerContRelat = "";
 
 
