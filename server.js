@@ -31,6 +31,10 @@ app.get("/signup", (req, res) => {
   res.sendFile(path.join(__dirname, filePath, "register.html"));
 });
 
+app.get("/signup", (req, res) => {
+  res.sendFile(path.join(__dirname, filePath, "register.html"));
+});
+
 // Handle check in
 app.get("/checkin", (req, res) => {
   let eventCode = req.query.eventCode;
