@@ -18,17 +18,17 @@ app.use(express.static(filePath));
 // Start server
 const portNum = 8080;
 app.listen(portNum, () => {
-  console.log("Listening on port " + portNum);
+    console.log("Listening on port " + portNum);
 });
 
 // Landing page
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, filePath, "login.html"));
+    res.sendFile(path.join(__dirname, filePath, "login.html"));
 });
 
 // Sign-up page
 app.get("/signup", (req, res) => {
-  res.sendFile(path.join(__dirname, filePath, "register.html"));
+    res.sendFile(path.join(__dirname, filePath, "register.html"));
 });
 
 app.get("/signup", (req, res) => {
@@ -37,17 +37,17 @@ app.get("/signup", (req, res) => {
 
 // Handle check in
 app.get("/checkin", (req, res) => {
-  let eventCode = req.query.eventCode;
-  res.send(eventCode);
-  console.log(eventCode);
+    let eventCode = req.query.eventCode;
+    res.send(eventCode);
+    console.log(eventCode);
 });
 
 // Handle account sign up
 app.post("/signup", (req, res) => {
-  let username = req.body.username;
-  let password = req.body.password;
+    let username = req.body.username;
+    let password = req.body.password;
 
-  console.log("Username: " + username);
-  console.log("Password: " + password);
+    console.log("Username: " + username);
+    console.log("Password: " + password);
 });
 
