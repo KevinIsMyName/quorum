@@ -6,19 +6,21 @@ let confirmPassword = document.getElementById("confirmPassword").value;
 let firstName = document.getElementById("firstName").value;
 let lastName = document.getElementById("lastName").value;
 let age = parseInt(document.getElementById("age").value);
-
 // Get gender
 let genderButtons = document.getElementsByName("gender");
 let gender = "";
-
 // Get grad month
 let graduation = document.getElementsByName("gradMonth");
+let major = document.getElementById("major");
+
 let emerName = document.getElementById("emerName").value;
 let emerPhone = document.getElementById("emerPhone").value;
 
 // Get emergency contact relationship relationship
 let emerContRelatButtons = document.getElementsByName("relationship");
 let emerContRelat = "";
+
+let submitData = {};
 
 function getGender() {
   let genderFound = false;
@@ -34,6 +36,7 @@ function getGender() {
   } else {
     alert("Error: No gender was selected");
   }
+  return genderFound;
 }
 
 function getEmerContRelat() {
@@ -50,6 +53,7 @@ function getEmerContRelat() {
   } else {
     alert("Error: No relationship was selected");
   }
+  return relatFound;
 }
 
 function isValidEmail() {
@@ -61,12 +65,24 @@ function isValidPhoneNum() {
 }
 
 function buildJSON() {
-  let submissionData = {};
   alert("JSON build in progress!");
+  if (!getGender() || !getEmerContRelat()) {
+    return;
+  }
+  isValidEmail();
+  isValidPhoneNum();
 }
 
 
-submitButton.addEventListener("click", buildJSON);
+submitButton.addEventListener("click", function () {
+  buildJSON();
 
+  // Send POST request
+  let xhr = new XMLHttpRequest;
+  xhr.addEventListener("load", function () {
 
-
+  });
+  xhr.responseType = "json";
+  xhr.open("POST", JSON.parse(submitData));
+  xhr.send()
+});
