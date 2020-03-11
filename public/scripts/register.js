@@ -97,7 +97,13 @@ function buildJSON() {
     firstName = document.getElementById("firstName").value;
     lastName = document.getElementById("lastName").value;
     age = parseInt(document.getElementById("age").value);
-    graduation = document.getElementsByName("gradMonth");
+    for (let i = 0; i < genderButtons.length; i++) {
+        if (genderButtons[i].checked) {
+            gender = genderButtons[i].value;
+            break;
+        }
+    }
+    graduation = document.getElementById("gradMonth").value;
     major = document.getElementById("major").value;
     emerName = document.getElementById("emerName").value;
     emerPhoneNum = document.getElementById("emerPhone").value;
@@ -110,6 +116,7 @@ function buildJSON() {
     }
     submitData.user.username = username;
     submitData.user.email = emailAddr;
+    submitData.user.password = password;
     submitData.user.firstName = firstName;
     submitData.user.lastName = lastName;
     submitData.user.age = age;
@@ -119,21 +126,20 @@ function buildJSON() {
     submitData.emerCont.name = emerName;
     submitData.emerCont.phoneNum = emerPhoneNum;
     submitData.emerCont.relat = emerContRelat;
-
     submitData.error = errors;
-    console.log(submitData);
 }
 
 
 submitButton.addEventListener("click", () => {
     buildJSON();
+    console.log(submitData);
 
-    // Send POST request
-    // let xhr = new XMLHttpRequest;
-    // xhr.addEventListener("load", function () {
-    //
-    // });
-    // xhr.responseType = "json";
-    // xhr.open("POST", JSON.parse(submitData));
-    // xhr.send()
+    let xhr = new XMLHttpRequest;
+    xhr.addEventListener("load", function () {
+        console.log("Call back received");
+        console.log(this.response);
+    });
+    xhr.open("POST", "/registered");
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xhr.send(JSON.stringify(submitData));
 });
