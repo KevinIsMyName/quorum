@@ -59,10 +59,7 @@ function getEmerContRelat() {
 }
 
 function isValidAge(age) {
-    if (isNaN(age)) {
-        console.log(age + " is not a valid age.");
-        return false;
-    } else if (age > 100 || age < 0) {
+    if (age > 100 || age < 0) {
         console.log(age + " is not a valid age.");
         return false;
     } else {

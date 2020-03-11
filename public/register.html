@@ -23,7 +23,7 @@
         <div><h3>User profile</h3></div>
         <div><label>First name: </label><input id="firstName" type="text" onkeypress="return /[A-Za-z]/i.test(event.key)"></div>
         <div><label>Last name: </label><input id="lastName" type="text" onkeypress="return /[A-Za-z]/i.test(event.key)"></div>
-        <div><label>Age: </label><input id="age" type="number" max="100" min="18" ></div>
+        <div><label>Age: </label><input id="age" type="number" max="100" min="18" onkeypress="return /\d/i.test(event.key)"></div>
         <form>
             Gender
             <div><label for="male"></label><input type="radio" id="male" name="gender" value="Male">Male</div>
