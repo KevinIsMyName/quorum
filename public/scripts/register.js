@@ -62,9 +62,8 @@ function isValidAge(age) {
     if (age > 100 || age < 0) {
         console.log(age + " is not a valid age.");
         return false;
-    } else {
-        return true;
     }
+    return true;
 }
 
 function isValidEmail(addr) {
@@ -79,6 +78,14 @@ function isValidEmail(addr) {
 function isValidPhoneNum(phoneNum) {
     let re = /[0-9]{3}-[0-9]{3}-[0-9]{4}/;
     return re.test(phoneNum);
+}
+
+function isConsistantPass(password, confirmPassword) {
+    if (password !== confirmPassword) {
+        console.log("Passwords do not match.");
+        return false;
+    }
+    return true;
 }
 
 function buildJSON() {
@@ -97,7 +104,7 @@ function buildJSON() {
 
     let errors = false;
     console.log("JSON build in progress!");
-    if (!isValidEmail(emailAddr) && !isValidAge(age) && !getGender() && !getEmerContRelat() && !isValidPhoneNum(emerPhoneNum) && (password === confirmPassword)) {
+    if (!isValidEmail(emailAddr) || !isValidAge(age) || !getGender() || !getEmerContRelat() || !isValidPhoneNum(emerPhoneNum) || !isConsistantPass(password, confirmPassword)) {
         errors = true;
         return;
     }

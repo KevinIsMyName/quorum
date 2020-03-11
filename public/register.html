@@ -151,7 +151,7 @@
         <br>
 
         <div><h3>Emergency contact</h3></div>
-        <div>Full name: <input id="emerName" type="text" onkeypress="return /[A-Za-z]/i.test(event.key)"></div>
+        <div>Full name: <input id="emerName" type="text" onkeypress="return /[A-Za-z\s]/i.test(event.key)"></div>
         <div>Phone number:
             <input id="emerPhone" type="tel" onkeypress="return /[{0-9}-]/i.test(event.key)"></div>
         <form>
