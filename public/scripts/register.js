@@ -93,7 +93,6 @@ function buildJSON() {
     firstName = document.getElementById("firstName").value;
     lastName = document.getElementById("lastName").value;
     age = parseInt(document.getElementById("age").value);
-    genderButtons = document.getElementsByName("gender");
     graduation = document.getElementsByName("gradMonth");
     major = document.getElementById("major").value;
     emerName = document.getElementById("emerName").value;
