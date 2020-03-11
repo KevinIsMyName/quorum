@@ -27,12 +27,17 @@ app.get("/", (req, res) => {
 });
 
 // Sign-up page
-app.get("/signup", (req, res) => {
+app.get("/register", (req, res) => {
     res.sendFile(path.join(__dirname, filePath, "register.html"));
 });
 
-app.get("/signup", (req, res) => {
+// Sign-up page to catch POST request
+app.post("/registered?", (req, res) => {
   res.sendFile(path.join(__dirname, filePath, "register.html"));
+  console.log("POST request received at /registered?");
+  let data = req.body;
+  console.log(data);
+  res.send("Server has handled POST request.");
 });
 
 // Handle check in
@@ -40,14 +45,5 @@ app.get("/checkin", (req, res) => {
     let eventCode = req.query.eventCode;
     res.send(eventCode);
     console.log(eventCode);
-});
-
-// Handle account sign up
-app.post("/signup", (req, res) => {
-    let username = req.body.username;
-    let password = req.body.password;
-
-    console.log("Username: " + username);
-    console.log("Password: " + password);
 });
 
