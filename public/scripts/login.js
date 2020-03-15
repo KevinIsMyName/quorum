@@ -11,7 +11,7 @@ window.addEventListener( "load", function () {
         } );
 
         // Define what happens in case of error
-        xhr.addEventListener( "error", function(event  {
+        xhr.addEventListener( "error", function(event)  {
             alert( 'Oops! Something went wrong.' );
         } );
 
