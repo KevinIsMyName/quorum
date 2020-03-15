@@ -33,11 +33,11 @@ app.get("/register", (req, res) => {
 
 // Sign-up page to catch POST request
 app.post("/registered?", (req, res) => {
-  res.sendFile(path.join(__dirname, filePath, "register.html"));
-  console.log("POST request received at /registered?");
-  let data = req.body;
-  console.log(data);
-  res.send("Server has handled POST request.");
+    res.sendFile(path.join(__dirname, filePath, "register.html"));
+    console.log("POST request received at /registered?");
+    let data = req.body;
+    console.log(data);
+    res.send("Server has handled POST request.");
 });
 
 // Handle check in
