@@ -52,3 +52,10 @@ app.get("/checkedin?", (req, res) => {
     res.json(sendData);
 });
 
+// Handle log in
+app.post("/loggedin", (req, res) => {
+    console.log(req.body);
+    // TODO: DO SQL Stuff to check if valid user
+
+    // TODO: Tell user that he is logged in
+});
