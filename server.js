@@ -50,27 +50,13 @@ app.post("/registered?", (req, res) => {
     let password = data.user.password;
     let firstName = data.user.firstName;
     let lastName = data.user.lastName;
-    let age = (data.user.age).toString();
+    let age = data.user.age;
     let gender = data.user.gender;
     let gradDate = data.user.graduation;
     let major = data.user.major;
     let emerName = data.emerCont.name;
     let emerPhone = data.emerCont.phoneNum;
     let emerRel = data.emerCont.relat;
-
-    // DEBUG: Check types
-    console.log("\n\nDEBUG");
-    console.log("Username: " + (typeof username));
-    console.log("Password: " + (typeof password));
-    console.log("First name: " + (typeof firstName));
-    console.log("Last name: " + (typeof lastName));
-    console.log("Age: " + (typeof age));
-    console.log("Gender: " + (typeof gender));
-    console.log("Grad date: " + (typeof gradDate));
-    console.log("Major: " + (typeof major));
-    console.log("emerName: " + (typeof emerName));
-    console.log("emerPhone: " + (typeof emerPhone));
-    console.log("emerRel: " + (typeof emerRel));
 
     // Insert new user info into the userProfiles table
     con.connect(function (err) {
