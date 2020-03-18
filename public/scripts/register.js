@@ -96,7 +96,7 @@ function buildJSON() {
     confirmPassword = document.getElementById("confirmPassword").value;
     firstName = document.getElementById("firstName").value;
     lastName = document.getElementById("lastName").value;
-    age = parseInt(document.getElementById("age").value);
+    age = document.getElementById("age").value;
     for (let i = 0; i < genderButtons.length; i++) {
         if (genderButtons[i].checked) {
             gender = genderButtons[i].value;
