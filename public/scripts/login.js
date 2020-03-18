@@ -24,9 +24,15 @@ login.addEventListener("click", () => {
             passwordF.value = "";
             output.innerText = "Invalid email or password.";
         } else {
+            let userID = resp.userID;
             output.innerText = "Logging in...";
-
+            console.log("Received unique user ID from server.");
             // TODO: redirect the user to another html page, and store the userID somewhere?
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires="+ d.toUTCString();
+            document.cookie = "userID=" + userID + + ";" + expires + ": path=/";
+            window.location.replace("dashboard.html");
         }
     });
     xhr.open("POST", "/loggedin");
