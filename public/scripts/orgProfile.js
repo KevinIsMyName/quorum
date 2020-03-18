@@ -1,9 +1,3 @@
-//Info:
-//1. Name of Student Organization
-//2. About
-//3. Email
-//4. Phone Number 
-
 /*
 +-----------+--------------+------+-----+---------+----------------+
 | Field     | Type         | Null | Key | Default | Extra          |
@@ -15,4 +9,10 @@
 | orgNumber | varchar(20)  | NO   |     | NULL    |                |
 +-----------+--------------+------+-----+---------+----------------+
 */
+
+var express = require("express");
+var app = express();
+var mysql = require("mysql");
+var bodyParser = require("body-parser");
+
 
