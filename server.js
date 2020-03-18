@@ -21,14 +21,6 @@ app.listen(portNum, () => {
     console.log("Listening on port " + portNum);
 });
 
-// Create connection to MySql Server
-const con = mysql.createConnection({
-    host: "localhost",
-    user: "quorum",
-    password: "quorum",
-    database: "quorum"
-});
-
 // Landing page
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, filePath, "login.html"));
@@ -58,9 +50,21 @@ app.post("/registered?", (req, res) => {
     let emerPhone = data.emerCont.phoneNum;
     let emerRel = data.emerCont.relat;
 
+    // Create connection to MySql Server
+    let con = mysql.createConnection({
+        host: "localhost",
+        user: "quorum",
+        password: "quorum",
+        database: "quorum"
+    });
+
     // Insert new user info into the userProfiles table
     con.connect(function (err) {
         if (err) throw err;
+
+        // TODO: check if another user with the same USERNAME or EMAIL exists, if yes, respond with error, else continue
+
+        // Insert register.html page information as a new user into MySQL database
         let sql = "INSERT INTO userprofiles " +
           "(username, password, firstName, lastName, age, gender, gradDate, major, emergencyName, emergencyPhone, emergencyRelationship) " +
           "VALUES " +
@@ -87,7 +91,48 @@ app.get("/checkedin?", (req, res) => {
 app.post("/loggedin", (req, res) => {
     console.log("\n\nAt /loggedin");
     console.log(req.body);
-    // TODO: DO SQL Stuff to check if valid user
+
+    // TODO: parse out username and password
+    let username = "dys37";
+    let password = "agoodpassword";
+
+    // Create connection to MySql Server
+    let con = mysql.createConnection({
+        host: "localhost",
+        user: "quorum",
+        password: "quorum",
+        database: "quorum"
+    });
+
+    let valid = false;
+    let userID = NaN;
+
+    con.connect(function (err) {
+        if (err) throw err;
+        // Insert register.html page information as a new user into MySQL database
+        let sql = "SELECT userID, username, password FROM userprofiles;";
+        con.query(sql, function (err, result) {
+            if (err) throw err;
+            for (i = 0; i < result.length; i++) {
+                let row = result[i];
+                let tempUser = row.username;
+                let tempPass = row.password;
+                if (username == tempUser && password == tempPass) {
+                    valid = true;
+                    userID = row.userID;
+                }
+            }
+            if (valid) {
+                // TODO: send the user dashboard.html, and send them their userID to keep on client side
+
+            }
+            else {
+                // TODO: tell the user they have bad info
+
+            }
+        });
+    });
+
 
     // TODO: Tell user that he is logged in
 });
