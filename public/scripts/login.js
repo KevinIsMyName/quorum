@@ -29,9 +29,9 @@ login.addEventListener("click", () => {
             console.log("Received unique user ID from server.");
             // TODO: redirect the user to another html page, and store the userID somewhere?
             var d = new Date();
-            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            d.setTime(d.getTime() + (24*60*60*1000));
             var expires = "expires="+ d.toUTCString();
-            document.cookie = "userID=" + userID + + ";" + expires + ": path=/";
+            document.cookie = "userID=" + encodeURIComponent(userID) + + ";" + expires + ": path=/";
             window.location.assign("dashboard.html");
         }
     });
