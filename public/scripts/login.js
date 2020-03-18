@@ -5,7 +5,7 @@ let output = document.getElementById("output");
 
 function getCredentials() {
     let username = document.getElementById("username").value;
-    let password = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
     return {
         user: username,
         pass: password,
