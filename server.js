@@ -134,13 +134,12 @@ app.post("/loggedin", (req, res) => {
             }
             if (valid) {
                 // TODO: send the user dashboard.html, and send them their userID to keep on client side
-                res.send("hello");
-                //res.sendFile(path.join(__dirname, filePath, "dashboard.html"));
+                res.send({"error": false, "userID": userID});
                 console.log("here!!!");
             }
             else {
                 // TODO: tell the user they have bad info
-                res.send({error: true});
+                res.send({"error": true, "userID": userID});
                 console.log("alohaaaa");
             }
         });

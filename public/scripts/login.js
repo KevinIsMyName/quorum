@@ -18,12 +18,15 @@ login.addEventListener("click", () => {
     let xhr = new XMLHttpRequest();
     xhr.addEventListener("load", function() {
         console.log("Call back received: " + this.response);
-        if (this.response.error) {
+        let resp = JSON.parse(this.response);
+        if (resp.error) {
             usernameF.value = "";
             passwordF.value = "";
             output.innerText = "Invalid email or password.";
         } else {
             output.innerText = "Logging in...";
+
+            // TODO: redirect the user to another html page, and store the userID somewhere?
         }
     });
     xhr.open("POST", "/loggedin");
