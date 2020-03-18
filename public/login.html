@@ -11,14 +11,17 @@
     </head>
     <body>
         <h2>Quorum</h2>
-        Login Page<br>
-        <form>
-            <div><label>Username: </label>
-                <input type="text" id="username"></div>
-            <div><label>Password: </label>
-                <input type="password" id="password"></div>
-            <input type="submit" id="submit" value="Login">
-        </form>
-        Don't have an account? <a href="register.html"><button>Register</button></a>
+        <button onclick="document.getElementById('loginPopUp').display='block'">Login</button>
+        <div>
+            <form>
+                <div><label>Username: </label>
+                    <input type="text" id="username"></div>
+                <div><label>Password: </label>
+                    <input type="password" id="password"></div>
+                <input type="submit" id="submit" value="Login">
+            </form>
+            Don't have an account? <a href="register.html"><button>Register</button></a>
+        </div>
+
     </body>
 </html>
