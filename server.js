@@ -47,10 +47,10 @@ app.post("/registered?", (req, res) => {
 
     // Extract user info from clientJSON
     let username = data.user.username;
-    let password =data.user.password;
+    let password = data.user.password;
     let firstName = data.user.firstName;
     let lastName = data.user.lastName;
-    let age = (data.user.age).toString();
+    let age = data.user.age;
     let gender = data.user.gender;
     let gradDate = data.user.graduation;
     let major = data.user.major;
@@ -59,12 +59,12 @@ app.post("/registered?", (req, res) => {
     let emerRel = data.emerCont.relat;
 
     // Insert new user info into the userProfiles table
-    con.connect(function(err) {
+    con.connect(function (err) {
         if (err) throw err;
         let sql = "INSERT INTO userprofiles " +
-            "(username, password, firstName, lastName, age, gender, gradDate, major, emergencyName, emergencyPhone, emergencyRelationship) " +
-            "VALUES " +
-            "(\"" + username + "\", \"" + password + "\", \"" + firstName  + "\", \"" + lastName + "\", " + age + ", \"" + gender + "\", \"" + gradDate + "\", \"" + major + "\", \"" + emerName + "\", \"" + emerPhone + "\", \"" + emerRel + "\");";
+          "(username, password, firstName, lastName, age, gender, gradDate, major, emergencyName, emergencyPhone, emergencyRelationship) " +
+          "VALUES " +
+          "(\"" + username + "\", \"" + password + "\", \"" + firstName + "\", \"" + lastName + "\", " + age + ", \"" + gender + "\", \"" + gradDate + "\", \"" + major + "\", \"" + emerName + "\", \"" + emerPhone + "\", \"" + emerRel + "\");";
         con.query(sql, function (err, result) {
             if (err) throw err;
             console.log("Successfully added user!");

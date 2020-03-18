@@ -1,22 +1,22 @@
 const submitButton = document.getElementById("submitButton");
-let username = "";
-let emailAddr = "";
-let password = "";
-let confirmPassword = "";
-let firstName = "";
-let lastName = "";
-let age = "";
+let username;
+let emailAddr;
+let password;
+let confirmPassword;
+let firstName;
+let lastName;
+let age;
 // Get gender
 const genderButtons = document.getElementsByName("gender");
-let gender = "";
+let gender;
 // Get grad month
-let graduation = "";
-let major = "";
-let emerName = "";
-let emerPhoneNum = "";
+let graduation;
+let major;
+let emerName;
+let emerPhoneNum;
 // Get emergency contact relationship relationship
 const emerContRelatButtons = document.getElementsByName("relationship");
-let emerContRelat = "";
+let emerContRelat;
 
 
 let submitData = {
@@ -96,7 +96,7 @@ function buildJSON() {
     confirmPassword = document.getElementById("confirmPassword").value;
     firstName = document.getElementById("firstName").value;
     lastName = document.getElementById("lastName").value;
-    age = parseInt(document.getElementById("age").value);
+    age = document.getElementById("age").value;
     for (let i = 0; i < genderButtons.length; i++) {
         if (genderButtons[i].checked) {
             gender = genderButtons[i].value;
