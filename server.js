@@ -92,9 +92,8 @@ app.post("/loggedin", (req, res) => {
     console.log("\n\nAt /loggedin");
     console.log(req.body);
 
-    // TODO: parse out username and password
-    let username = "dys37";
-    let password = "agoodpassword";
+    let username = req.body.user;
+    let password = req.body.pass;
 
     // Create connection to MySql Server
     let con = mysql.createConnection({
@@ -113,26 +112,24 @@ app.post("/loggedin", (req, res) => {
         let sql = "SELECT userID, username, password FROM userprofiles;";
         con.query(sql, function (err, result) {
             if (err) throw err;
-            for (i = 0; i < result.length; i++) {
+            for (let i = 0; i < result.length; i++) {
                 let row = result[i];
                 let tempUser = row.username;
                 let tempPass = row.password;
-                if (username == tempUser && password == tempPass) {
+                if (username === tempUser && password === tempPass) {
                     valid = true;
                     userID = row.userID;
+                    break;
                 }
             }
             if (valid) {
                 // TODO: send the user dashboard.html, and send them their userID to keep on client side
-
+                res.sendFile(path.join(__dirname, filePath, "dashboard.html"));
             }
             else {
                 // TODO: tell the user they have bad info
-
+                res.send({error: true});
             }
         });
     });
-
-
-    // TODO: Tell user that he is logged in
 });
