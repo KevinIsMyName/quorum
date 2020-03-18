@@ -45,17 +45,18 @@ app.post("/registered?", (req, res) => {
     console.log(data);
     res.send("Server has handled POST request.");
 
-    var username = "test";
-    var password = "test";
-    var firstName = "test";
-    var lastName = "test";
-    var age = "20";
-    var gender = "test";
-    var gradDate = "test";
-    var major = "test";
-    var emerName = "test";
-    var emerPhone = "test";
-    var emerRel = "test";
+    // Extract user info from clientJSON
+    let username = user.username;
+    let password = user.password;
+    let firstName = user.firstName;
+    let lastName = user.lastNaame;
+    let age = user.age;
+    let gender = user.gender;
+    let gradDate = user.graduation;
+    let major = user.major;
+    let emerName = emerCont.name;
+    let emerPhone = emerCont.phoneNum;
+    let emerRel = emerCont.relat;
 
     // Insert new user info into the userProfiles table
     con.connect(function(err) {
