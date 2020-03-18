@@ -9,6 +9,15 @@ function getCookieValue(a) {
 }
 let userID = getCookieValue("userID") ? getCookieValue("userID") : "notLoggedIn";
 
+window.onload = (event) => {
+    userID = getCookieValue("userID");
+    if (userID === "") {
+        window.location.assign("/");
+    }
+    console.log("User: " + userID);
+    // do user authentication, load the proper content on this webpage
+};
+
 checkBtn.addEventListener("click", () => {
     eventCode = document.getElementById("eventCode").value;
     let xhr = new XMLHttpRequest();

@@ -19,15 +19,13 @@ function getCookieValue(a) {
     var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
     return b ? b.pop() : '';
 }
-
-let userID;
+let userID = getCookieValue("userID") ? getCookieValue("userID") : "notLoggedIn";
 
 window.onload = (event) => {
-    let cookieString = document.cookie;
     userID = getCookieValue("userID");
     if (userID === "") {
         window.location.assign("/");
     }
     console.log("User: " + userID);
-    // do user authentication, load the proper webpages
+    // do user authentication, load the proper content on this webpage
 };
