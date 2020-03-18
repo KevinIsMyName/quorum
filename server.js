@@ -43,14 +43,10 @@ app.post("/registered?", (req, res) => {
 });
 
 // Handle check in
-app.get("/checkin?", (req, res) => {
+app.get("/checkedin?", (req, res) => {
     let sendData = {};
     let eventCode = req.query.eventCode;
-    if (isNaN(eventCode) || eventCode === "") {
-        sendData.error = true;
-    } else {
-        sendData.error = false;
-    }
+    sendData.error = isNaN(eventCode) || eventCode === "";
     console.log(sendData);
     console.log(eventCode);
     res.json(sendData);
