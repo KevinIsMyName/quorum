@@ -14,6 +14,6 @@ checkBtn.addEventListener("click", () => {
         }
     });
     xhr.responseType = "json";
-    xhr.open("GET", "checkin?eventCode=" + eventCode);
+    xhr.open("GET", "checkedin?eventCode=" + eventCode);
     xhr.send();
 });
