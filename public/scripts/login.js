@@ -18,6 +18,7 @@ login.addEventListener("click", () => {
     let xhr = new XMLHttpRequest();
     xhr.addEventListener("load", () => {
         console.log("Call back received: " + this.response);
+        // TODO: do stuff to carry credentials around
     });
     xhr.open("POST", "/loggedin");
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
