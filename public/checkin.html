@@ -8,18 +8,19 @@
         <link rel="icon" type="image/png" sizes="16x16" href="resource/favicon-16x16.png">
         <link rel="manifest" href="resource/site.webmanifest">
         <link rel="stylesheet" type="text/css" href="./stylesheets/checkin.css">
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,600,700&display=swap" rel="stylesheet">
         <script src="./scripts/checkin.js" defer></script>
         <title>Event Check-In</title>
     </head>
     <body>
         <h1>Quorum</h1>
         <h2>Enter Event Code:</h2>
-        <input type="text" id="eventCode" name="eventCode" placeholder="Event Code"
-               onkeypress="return /\d/i.test(event.key)">
+        <div><input type="text" id="eventCode" name="eventCode" placeholder="Event Code"
+               onkeypress="return /[A-Za-z0-9]/i.test(event.key)"></div>
         <br>
         <br>
         <div id="errorMsg"></div>
         <br>
-        <button id="checkBtn" type="submit" value="Check-in">Check-in</button> <!-- Make the event code only numbers?-->
+        <div><button id="checkBtn" type="submit" value="Check-in">Check-in</button></div>
     </body>
 </html>

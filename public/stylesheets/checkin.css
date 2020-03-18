@@ -13,3 +13,29 @@ h1 {
     background-image: linear-gradient(to right, #62CCC5, #A8E4DF, #62CCC5);
     font-size: 3rem;
 }
+
+h2 {
+    text-align: center;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#eventCode {
+    text-align: center;
+    font-size: 1rem;
+    height: 2rem;
+    width: 25%;
+}
+
+#checkBtn {
+    color: white;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    width: 25%;
+    background-color: lightcoral;
+}
