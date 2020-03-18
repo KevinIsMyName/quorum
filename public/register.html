@@ -14,163 +14,166 @@
     </head>
     <body>
         <h2>Quorum</h2>
-        <div>Register for a Quorum account.</div>
-
-        <br>
-        <h3>Login details</h3>
-        <div><label>Username: </label><input id="userName" type="text" onkeypress="return /[A-Za-z0-9]/i.test(event.key)"></div>
-        <div><label>Email address: </label><input id="email" type="email"></div>
-        <div><label>Password: </label><input id="password" type="password"></div>
-        <div><label>Confirm password: </label><input id="confirmPassword" type="password"></div>
-        <br>
-        <h3>User profile</h3>
-        <div><label>First name: </label><input id="firstName" type="text" onkeypress="return /[A-Za-z]/i.test(event.key)"></div>
-        <div><label>Last name: </label><input id="lastName" type="text" onkeypress="return /[A-Za-z]/i.test(event.key)"></div>
-        <div><label>Age: </label><input id="age" type="number" max="100" min="18" onkeypress="return /\d/i.test(event.key)"></div>
-        <form>
-            Gender:
-            <div><label for="male"></label><input type="radio" id="male" name="gender" value="Male">Male</div>
-            <div><label for="female"></label><input type="radio" id="female" name="gender" value="Female">Female
-            </div>
-            <div><label for="otherGender"></label><input type="radio" id="otherGender" name="gender" value="Other">Other
-            </div>
-        </form>
-        <br>
-        <form>
-            <label for="gradMonth">
-            </label>
-            Graduation date: <input type="month" id="gradMonth" min="1979-12-31" max="2030-12-31">
-        </form>
-        <div>Major: 
-        <select id="major">
-            <option value="Prefer not to answer" selected>Undecided</option>
-            <option value="Accounting (BSBA)">Accounting (BSBA)</option>
-            <option value="Air Force ROTC">Air Force ROTC</option>
-            <option value="Animation & Visual Effects (BS)">Animation & Visual Effects (BS)</option>
-            <option value="Architectural Engineering (BSAE)">Architectural Engineering (BSAE)</option>
-            <option value="Architecture (BArch)">Architecture (BArch)</option>
-            <option value="Army ROTC">Army ROTC</option>
-            <option value="Art History (BA, BS, BA/MS)">Art History (BA, BS, BA/MS)</option>
-            <option value="Behavioral Health Counseling (BS)">Behavioral Health Counseling (BS)</option>
-            <option value="Biological Sciences (BS)">Biological Sciences (BS)</option>
-            <option value="Biomedical Engineering (BS)">Biomedical Engineering (BS)</option>
-            <option value="Business (General) (BSBA)">Business (General) (BSBA)</option>
-            <option value="Business and Engineering (BSBAE)">Business and Engineering (BSBAE)</option>
-            <option value="Business Analytics (co-major) (BSBA)">Business Analytics (co-major) (BSBA)</option>
-            <option value="Business Administration (BSBA)">Business Administration (BSBA)</option>
-            <option value="Business Economics (co-major) (BSBA)">Business Economics (co-major) (BSBA)</option>
-            <option value="Chemical Engineering (BSCHE)">Chemical Engineering (BSCHE)</option>
-            <option value="Chemistry (BA, BS)">Chemistry (BA, BS)</option>
-            <option value="Chemistry-Biochemistry Concentration (BS)">Chemistry-Biochemistry Concentration (BS)</option>
-            <option value="Civil Engineering (BSCIV)">Civil Engineering (BSCIV)</option>
-            <option value="Communication (BA, BS)">Communication (BA, BS)</option>
-            <option value="Computer Engineering (BSCE)">Computer Engineering (BSCE)</option>
-            <option value="Computer Science (BACS, BSCS)">Computer Science (BACS, BSCS)</option>
-            <option value="Computing and Security Technology (BSCST)">Computing and Security Technology (BSCST)</option>
-            <option value="Construction Management (BSCMGT)">Construction Management (BSCMGT)</option>
-            <option value="Criminology and Justice Studies (BS)">Criminology and Justice Studies (BS)</option>
-            <option value="Culinary Arts & Science (BSCAS)">Culinary Arts & Science (BSCAS)</option>
-            <option value="Custom-Designed Major (BS)">Custom-Designed Major (BS)</option>
-            <option value="Dance (BS)">Dance (BS)</option>
-            <option value="Data Science (BS)">Data Science (BS)</option>
-            <option value="Design and Merchandising (BS)">Design and Merchandising (BS)</option>
-            <option value="Design of Learning Technologies (BS)">Design of Learning Technologies (BS)</option>
-            <option value="Digital Media (BS/MS)">Digital Media (BS/MS)</option>
-            <option value="Economics (BAECON, BSECON, BS/JD)">Economics (BAECON, BSECON, BS/JD)</option>
-            <option value="Electrical Engineering (BSEE)">Electrical Engineering (BSEE)</option>
-            <option value="Elementary Education (BS)">Elementary Education (BS)</option>
-            <option value="Engineering (BSE)">Engineering (BSE)</option>
-            <option value="Engineering Management (BS/MS)">Engineering Management (BS/MS)</option>
-            <option value="Engineering Technology (BSET)">Engineering Technology (BSET)</option>
-            <option value="English (BA)">English (BA)</option>
-            <option value="English (BA) / Publishing (MA)">English (BA) / Publishing (MA)</option>
-            <option value="Entertainment and Arts Management (BS)">Entertainment and Arts Management (BS)</option>
-            <option value="Entrepreneurship and Innovation (BA)">Entrepreneurship and Innovation (BA)</option>
-            <option value="Entrepreneurship & Innovation 3-year Option (BA)">Entrepreneurship & Innovation 3-year Option
-                                                                             (BA)</option>
-            <option value="Environmental Engineering (BSENE)">Environmental Engineering (BSENE)</option>
-            <option value="Environmental Science (BS)">Environmental Science (BS)</option>
-            <option value="Environmental Studies and Sustainability (BA)">Environmental Studies and Sustainability
-                                                                          (BA)</option>
-            <option value="Fashion Design (BS)">Fashion Design (BS)</option>
-            <option value="Film and TV Production (BS)">Film and TV Production (BS)</option>
-            <option value="Finance (BSBA)">Finance (BSBA)</option>
-            <option value="Game Design and Production (BS)">Game Design and Production (BS)</option>
-            <option value="General Business (BSBA)">General Business (BSBA)</option>
-            <option value="General Studies (BS)">General Studies (BS)</option>
-            <option value="Geoscience (BS)">Geoscience (BS)</option>
-            <option value="Global Studies (BA)">Global Studies (BA)</option>
-            <option value="Global Studies (BA) / Public Health (MPH)">Global Studies (BA) / Public Health (MPH)</option>
-            <option value="Graphic Design (BS)">Graphic Design (BS)</option>
-            <option value="Health Sciences (BS)">Health Sciences (BS)</option>
-            <option value="Health Services Administration (BS)">Health Services Administration (BS)</option>
-            <option value="History (BA)">History (BA)</option>
-            <option value="Hospitality Management (BSHM)">Hospitality Management (BSHM)</option>
-            <option value="Information Systems (BS)">Information Systems (BS)</option>
-            <option value="Interactive Digital Media (BS)">Interactive Digital Media (BS)</option>
-            <option value="International Business (BSBA)">International Business (BSBA)</option>
-            <option value="Interior Design (BS)">Interior Design (BS)</option>
-            <option value="Legal Studies (BS)">Legal Studies (BS)</option>
-            <option value="Management Information Systems (BSBA)">Management Information Systems (BSBA)</option>
-            <option value="Marketing (BSBA)">Marketing (BSBA)</option>
-            <option value="Materials Science and Engineering (BSMSE)">Materials Science and Engineering (BSMSE)</option>
-            <option value="Mathematics (BA, BS)">Mathematics (BA, BS)</option>
-            <option value="Mechanical Engineering (BSME)">Mechanical Engineering (BSME)</option>
-            <option value="Music Industry (BS)">Music Industry (BS)</option>
-            <option value="Navy ROTC">Navy ROTC</option>
-            <option value="Nursing (BSN)">Nursing (BSN)</option>
-            <option value="Nursing: RN-MSN Bridge Program">Nursing: RN-MSN Bridge Program</option>
-            <option value="Nursing: Accelerated RN/BSN/MSN">Nursing: Accelerated RN/BSN/MSN</option>
-            <option value="Nutrition and Foods (BS)">Nutrition and Foods (BS)</option>
-            <option value="Nutrition Sciences: Accelerated BS/MS">Nutrition Sciences: Accelerated BS/MS</option>
-            <option value="Operations and Supply Chain Management (BSBA)">Operations and Supply Chain Management
-                                                                          (BSBA)</option>
-            <option value="Organizational Management (co-major) (BSBA)">Organizational Management (co-major) (BSBA)
-            </option>
-            <option value="Philosophy (BA)">Philosophy (BA)</option>
-            <option value="Philosophy, Politics and Economics">Philosophy, Politics and Economics</option>
-            <option value="Photography (BS)">Photography (BS)</option>
-            <option value="Physics (BS)">Physics (BS)</option>
-            <option value="Political Science (BA)">Political Science (BA)</option>
-            <option value="Product Design (BS)">Product Design (BS)</option>
-            <option value="Psychology (BS)">Psychology (BS)</option>
-            <option value="Public Health (BS)">Public Health (BS)</option>
-            <option value="Public Health: Accelerated BS/MPH">Public Health: Accelerated BS/MPH</option>
-            <option value="Real Estate Management and Development (BSBA)">Real Estate Management and Development
-                                                                          (BSBA)</option>
-            <option value="ROTC (Air Force, Army, Navy)">ROTC (Air Force, Army, Navy)</option>
-            <option value="Screenwriting & Playwriting (BS)">Screenwriting & Playwriting (BS)</option>
-            <option value="Sociology (BA)">Sociology (BA)</option>
-            <option value="Software Engineering (BS)">Software Engineering (BS)</option>
-            <option value="Sport Business (BSBA)">Sport Business (BSBA)</option>
-            <option value="Systems Engineering (BS/MS)">Systems Engineering (BS/MS)</option>
-            <option value="Teacher Education (BS)">Teacher Education (BS)</option>
-            <option value="Technology Innovation Management (co-major) (BS)">Technology Innovation Management (co-major)
-                                                                             (BS)</option>
-            <option value="Virtual Reality & Immersive Media (BS)">Virtual Reality & Immersive Media (BS)</option>
-            <option value="Westphal Studies Program (BS)">Westphal Studies Program (BS)</option>
-
-        </select>
-        </div>
+        <div class="registerMessage">Register for a Quorum account.</div>
         <br>
 
-        <h3>Emergency contact</h3>
-        <div>Full name: <input id="emerName" type="text" onkeypress="return /[A-Za-z\s]/i.test(event.key)"></div>
-        <div>Phone number:
-            <input id="emerPhone" type="tel" onkeypress="return /[{0-9}-]/i.test(event.key)"></div>
-        <form>
-            Relationship
-            <div><label for="parentGuard"></label><input type="radio" id="parentGuard" name="relationship"
-                                                         value="Parent/Guardian">Parent/Guardian
+        <section class="container">
+            <div class="leftSide">
+                <h3>Login details</h3>
+                <div><label>Username: </label><input id="userName" type="text" onkeypress="return /[A-Za-z0-9]/i.test(event.key)"></div>
+                <div><label>Email address: </label><input id="email" type="email"></div>
+                <div><label>Password: </label><input id="password" type="password"></div>
+                <div><label>Confirm password: </label><input id="confirmPassword" type="password"></div>
+                <br>
+                <h3>User profile</h3>
+                <div><label>First name: </label><input id="firstName" type="text" onkeypress="return /[A-Za-z]/i.test(event.key)"></div>
+                <div><label>Last name: </label><input id="lastName" type="text" onkeypress="return /[A-Za-z]/i.test(event.key)"></div>
+                <div><label>Age: </label><input id="age" type="number" max="100" min="18" onkeypress="return /\d/i.test(event.key)"></div>
+                <form>
+                    Gender:
+                    <div><label for="male"></label><input type="radio" id="male" name="gender" value="Male">Male</div>
+                    <div><label for="female"></label><input type="radio" id="female" name="gender" value="Female">Female</div>
+                    <div><label for="otherGender"></label><input type="radio" id="otherGender" name="gender" value="Other">Other</div>
+                </form>
+                <br>
+                <form>
+                    <label for="gradMonth">
+                    </label>
+                    Graduation date: <input type="month" id="gradMonth" min="1979-12-31" max="2030-12-31">
+                </form>
+                <div>Major: 
+                <select id="major">
+                    <option value="Prefer not to answer" selected>Undecided</option>
+                    <option value="Accounting (BSBA)">Accounting (BSBA)</option>
+                    <option value="Air Force ROTC">Air Force ROTC</option>
+                    <option value="Animation & Visual Effects (BS)">Animation & Visual Effects (BS)</option>
+                    <option value="Architectural Engineering (BSAE)">Architectural Engineering (BSAE)</option>
+                    <option value="Architecture (BArch)">Architecture (BArch)</option>
+                    <option value="Army ROTC">Army ROTC</option>
+                    <option value="Art History (BA, BS, BA/MS)">Art History (BA, BS, BA/MS)</option>
+                    <option value="Behavioral Health Counseling (BS)">Behavioral Health Counseling (BS)</option>
+                    <option value="Biological Sciences (BS)">Biological Sciences (BS)</option>
+                    <option value="Biomedical Engineering (BS)">Biomedical Engineering (BS)</option>
+                    <option value="Business (General) (BSBA)">Business (General) (BSBA)</option>
+                    <option value="Business and Engineering (BSBAE)">Business and Engineering (BSBAE)</option>
+                    <option value="Business Analytics (co-major) (BSBA)">Business Analytics (co-major) (BSBA)</option>
+                    <option value="Business Administration (BSBA)">Business Administration (BSBA)</option>
+                    <option value="Business Economics (co-major) (BSBA)">Business Economics (co-major) (BSBA)</option>
+                    <option value="Chemical Engineering (BSCHE)">Chemical Engineering (BSCHE)</option>
+                    <option value="Chemistry (BA, BS)">Chemistry (BA, BS)</option>
+                    <option value="Chemistry-Biochemistry Concentration (BS)">Chemistry-Biochemistry Concentration (BS)</option>
+                    <option value="Civil Engineering (BSCIV)">Civil Engineering (BSCIV)</option>
+                    <option value="Communication (BA, BS)">Communication (BA, BS)</option>
+                    <option value="Computer Engineering (BSCE)">Computer Engineering (BSCE)</option>
+                    <option value="Computer Science (BACS, BSCS)">Computer Science (BACS, BSCS)</option>
+                    <option value="Computing and Security Technology (BSCST)">Computing and Security Technology (BSCST)</option>
+                    <option value="Construction Management (BSCMGT)">Construction Management (BSCMGT)</option>
+                    <option value="Criminology and Justice Studies (BS)">Criminology and Justice Studies (BS)</option>
+                    <option value="Culinary Arts & Science (BSCAS)">Culinary Arts & Science (BSCAS)</option>
+                    <option value="Custom-Designed Major (BS)">Custom-Designed Major (BS)</option>
+                    <option value="Dance (BS)">Dance (BS)</option>
+                    <option value="Data Science (BS)">Data Science (BS)</option>
+                    <option value="Design and Merchandising (BS)">Design and Merchandising (BS)</option>
+                    <option value="Design of Learning Technologies (BS)">Design of Learning Technologies (BS)</option>
+                    <option value="Digital Media (BS/MS)">Digital Media (BS/MS)</option>
+                    <option value="Economics (BAECON, BSECON, BS/JD)">Economics (BAECON, BSECON, BS/JD)</option>
+                    <option value="Electrical Engineering (BSEE)">Electrical Engineering (BSEE)</option>
+                    <option value="Elementary Education (BS)">Elementary Education (BS)</option>
+                    <option value="Engineering (BSE)">Engineering (BSE)</option>
+                    <option value="Engineering Management (BS/MS)">Engineering Management (BS/MS)</option>
+                    <option value="Engineering Technology (BSET)">Engineering Technology (BSET)</option>
+                    <option value="English (BA)">English (BA)</option>
+                    <option value="English (BA) / Publishing (MA)">English (BA) / Publishing (MA)</option>
+                    <option value="Entertainment and Arts Management (BS)">Entertainment and Arts Management (BS)</option>
+                    <option value="Entrepreneurship and Innovation (BA)">Entrepreneurship and Innovation (BA)</option>
+                    <option value="Entrepreneurship & Innovation 3-year Option (BA)">Entrepreneurship & Innovation 3-year Option
+                                                                                    (BA)</option>
+                    <option value="Environmental Engineering (BSENE)">Environmental Engineering (BSENE)</option>
+                    <option value="Environmental Science (BS)">Environmental Science (BS)</option>
+                    <option value="Environmental Studies and Sustainability (BA)">Environmental Studies and Sustainability
+                                                                                (BA)</option>
+                    <option value="Fashion Design (BS)">Fashion Design (BS)</option>
+                    <option value="Film and TV Production (BS)">Film and TV Production (BS)</option>
+                    <option value="Finance (BSBA)">Finance (BSBA)</option>
+                    <option value="Game Design and Production (BS)">Game Design and Production (BS)</option>
+                    <option value="General Business (BSBA)">General Business (BSBA)</option>
+                    <option value="General Studies (BS)">General Studies (BS)</option>
+                    <option value="Geoscience (BS)">Geoscience (BS)</option>
+                    <option value="Global Studies (BA)">Global Studies (BA)</option>
+                    <option value="Global Studies (BA) / Public Health (MPH)">Global Studies (BA) / Public Health (MPH)</option>
+                    <option value="Graphic Design (BS)">Graphic Design (BS)</option>
+                    <option value="Health Sciences (BS)">Health Sciences (BS)</option>
+                    <option value="Health Services Administration (BS)">Health Services Administration (BS)</option>
+                    <option value="History (BA)">History (BA)</option>
+                    <option value="Hospitality Management (BSHM)">Hospitality Management (BSHM)</option>
+                    <option value="Information Systems (BS)">Information Systems (BS)</option>
+                    <option value="Interactive Digital Media (BS)">Interactive Digital Media (BS)</option>
+                    <option value="International Business (BSBA)">International Business (BSBA)</option>
+                    <option value="Interior Design (BS)">Interior Design (BS)</option>
+                    <option value="Legal Studies (BS)">Legal Studies (BS)</option>
+                    <option value="Management Information Systems (BSBA)">Management Information Systems (BSBA)</option>
+                    <option value="Marketing (BSBA)">Marketing (BSBA)</option>
+                    <option value="Materials Science and Engineering (BSMSE)">Materials Science and Engineering (BSMSE)</option>
+                    <option value="Mathematics (BA, BS)">Mathematics (BA, BS)</option>
+                    <option value="Mechanical Engineering (BSME)">Mechanical Engineering (BSME)</option>
+                    <option value="Music Industry (BS)">Music Industry (BS)</option>
+                    <option value="Navy ROTC">Navy ROTC</option>
+                    <option value="Nursing (BSN)">Nursing (BSN)</option>
+                    <option value="Nursing: RN-MSN Bridge Program">Nursing: RN-MSN Bridge Program</option>
+                    <option value="Nursing: Accelerated RN/BSN/MSN">Nursing: Accelerated RN/BSN/MSN</option>
+                    <option value="Nutrition and Foods (BS)">Nutrition and Foods (BS)</option>
+                    <option value="Nutrition Sciences: Accelerated BS/MS">Nutrition Sciences: Accelerated BS/MS</option>
+                    <option value="Operations and Supply Chain Management (BSBA)">Operations and Supply Chain Management
+                                                                                (BSBA)</option>
+                    <option value="Organizational Management (co-major) (BSBA)">Organizational Management (co-major) (BSBA)
+                    </option>
+                    <option value="Philosophy (BA)">Philosophy (BA)</option>
+                    <option value="Philosophy, Politics and Economics">Philosophy, Politics and Economics</option>
+                    <option value="Photography (BS)">Photography (BS)</option>
+                    <option value="Physics (BS)">Physics (BS)</option>
+                    <option value="Political Science (BA)">Political Science (BA)</option>
+                    <option value="Product Design (BS)">Product Design (BS)</option>
+                    <option value="Psychology (BS)">Psychology (BS)</option>
+                    <option value="Public Health (BS)">Public Health (BS)</option>
+                    <option value="Public Health: Accelerated BS/MPH">Public Health: Accelerated BS/MPH</option>
+                    <option value="Real Estate Management and Development (BSBA)">Real Estate Management and Development
+                                                                                (BSBA)</option>
+                    <option value="ROTC (Air Force, Army, Navy)">ROTC (Air Force, Army, Navy)</option>
+                    <option value="Screenwriting & Playwriting (BS)">Screenwriting & Playwriting (BS)</option>
+                    <option value="Sociology (BA)">Sociology (BA)</option>
+                    <option value="Software Engineering (BS)">Software Engineering (BS)</option>
+                    <option value="Sport Business (BSBA)">Sport Business (BSBA)</option>
+                    <option value="Systems Engineering (BS/MS)">Systems Engineering (BS/MS)</option>
+                    <option value="Teacher Education (BS)">Teacher Education (BS)</option>
+                    <option value="Technology Innovation Management (co-major) (BS)">Technology Innovation Management (co-major)
+                                                                                    (BS)</option>
+                    <option value="Virtual Reality & Immersive Media (BS)">Virtual Reality & Immersive Media (BS)</option>
+                    <option value="Westphal Studies Program (BS)">Westphal Studies Program (BS)</option>
+
+                </select>
+                </div>
+                <br>
             </div>
-            <div><label for="sibling"></label><input type="radio" id="sibling" name="relationship" value="Sibling">Sibling
+
+            <div class="rightSide">
+                <h3>Emergency contact</h3>
+                <div>Full name: <input id="emerName" type="text" onkeypress="return /[A-Za-z\s]/i.test(event.key)"></div>
+                <div>Phone number:
+                    <input id="emerPhone" type="tel" onkeypress="return /[{0-9}-]/i.test(event.key)"></div>
+                <form>
+                    Relationship:
+                    <div><label for="parentGuard"></label><input type="radio" id="parentGuard" name="relationship" value="Parent/Guardian">Parent/Guardian
+                    </div>
+                    <div><label for="sibling"></label><input type="radio" id="sibling" name="relationship" value="Sibling">Sibling
+                    </div>
+                    <div><label for="friend"></label><input type="radio" id="friend" name="relationship" value="Friend">Friend
+                    </div>
+                    <div><label for="other"></label><input type="radio" id="other" name="relationship" value="Other">Other
+                    </div>
+                </form>
+                <br>
             </div>
-            <div><label for="friend"></label><input type="radio" id="friend" name="relationship" value="Friend">Friend
-            </div>
-            <div><label for="other"></label><input type="radio" id="other" name="relationship" value="Other">Other
-            </div>
-        </form>
-        <br>
+        </section>
         <input type="submit" id="submitButton" value="Register!">
     </body>
 </html>
