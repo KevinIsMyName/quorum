@@ -28,7 +28,7 @@
         <div><label>Last name: </label><input id="lastName" type="text" onkeypress="return /[A-Za-z]/i.test(event.key)"></div>
         <div><label>Age: </label><input id="age" type="number" max="100" min="18" onkeypress="return /\d/i.test(event.key)"></div>
         <form>
-            Gender
+            Gender:
             <div><label for="male"></label><input type="radio" id="male" name="gender" value="Male">Male</div>
             <div><label for="female"></label><input type="radio" id="female" name="gender" value="Female">Female
             </div>
@@ -41,7 +41,7 @@
             </label>
             Graduation date: <input type="month" id="gradMonth" min="1979-12-31" max="2030-12-31">
         </form>
-        Major
+        <div>Major: 
         <select id="major">
             <option value="Prefer not to answer" selected>Undecided</option>
             <option value="Accounting (BSBA)">Accounting (BSBA)</option>
@@ -151,6 +151,7 @@
             <option value="Westphal Studies Program (BS)">Westphal Studies Program (BS)</option>
 
         </select>
+        </div>
         <br>
 
         <h3>Emergency contact</h3>
