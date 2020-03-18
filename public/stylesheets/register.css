@@ -1,0 +1,39 @@
+body {
+    align-self: center;
+    font-family: "Playfair Display", serif;
+    margin: 0;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 0.1rem;
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    height: 4rem;
+    background-image: linear-gradient(to right, #62CCC5, #A8E4DF, #62CCC5);
+    font-size: 3rem;
+}
+
+h3 {
+    margin-left: 1rem;
+}
+
+div {
+    margin-left: 1rem;
+}
+
+form {
+    margin-left: 1rem;
+}
+
+#submitButton {
+    background-image: linear-gradient(to right, #62CCC5, #A8E4DF, #62CCC5);
+    font-family: "Playfair Display", serif;
+    font-size: 1rem;
+    width: 100%;
+    padding: 0.5rem;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 5px;
+}

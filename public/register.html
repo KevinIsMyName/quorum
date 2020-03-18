@@ -8,6 +8,8 @@
         <link rel="icon" type="image/png" sizes="32x32" href="resource/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="resource/favicon-16x16.png">
         <link rel="manifest" href="resource/site.webmanifest">
+        <link rel="stylesheet" type="text/css" href="./stylesheets/register.css">
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,600,700&display=swap" rel="stylesheet">
         <script src="scripts/register.js" defer></script>
     </head>
     <body>
@@ -15,18 +17,18 @@
         <div>Register for a Quorum account.</div>
 
         <br>
-        <h3>Login details</h3><br>
+        <h3>Login details</h3>
         <div><label>Username: </label><input id="userName" type="text" onkeypress="return /[A-Za-z0-9]/i.test(event.key)"></div>
         <div><label>Email address: </label><input id="email" type="email"></div>
         <div><label>Password: </label><input id="password" type="password"></div>
         <div><label>Confirm password: </label><input id="confirmPassword" type="password"></div>
         <br>
-        <div><h3>User profile</h3></div>
+        <h3>User profile</h3>
         <div><label>First name: </label><input id="firstName" type="text" onkeypress="return /[A-Za-z]/i.test(event.key)"></div>
         <div><label>Last name: </label><input id="lastName" type="text" onkeypress="return /[A-Za-z]/i.test(event.key)"></div>
         <div><label>Age: </label><input id="age" type="number" max="100" min="18" onkeypress="return /\d/i.test(event.key)"></div>
         <form>
-            Gender
+            Gender:
             <div><label for="male"></label><input type="radio" id="male" name="gender" value="Male">Male</div>
             <div><label for="female"></label><input type="radio" id="female" name="gender" value="Female">Female
             </div>
@@ -39,7 +41,7 @@
             </label>
             Graduation date: <input type="month" id="gradMonth" min="1979-12-31" max="2030-12-31">
         </form>
-        Major
+        <div>Major: 
         <select id="major">
             <option value="Prefer not to answer" selected>Undecided</option>
             <option value="Accounting (BSBA)">Accounting (BSBA)</option>
@@ -149,9 +151,10 @@
             <option value="Westphal Studies Program (BS)">Westphal Studies Program (BS)</option>
 
         </select>
+        </div>
         <br>
 
-        <div><h3>Emergency contact</h3></div>
+        <h3>Emergency contact</h3>
         <div>Full name: <input id="emerName" type="text" onkeypress="return /[A-Za-z\s]/i.test(event.key)"></div>
         <div>Phone number:
             <input id="emerPhone" type="tel" onkeypress="return /[{0-9}-]/i.test(event.key)"></div>
@@ -167,6 +170,7 @@
             <div><label for="other"></label><input type="radio" id="other" name="relationship" value="Other">Other
             </div>
         </form>
+        <br>
         <input type="submit" id="submitButton" value="Register!">
     </body>
 </html>
