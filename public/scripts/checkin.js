@@ -1,4 +1,5 @@
 const checkBtn = document.getElementById("checkBtn");
+var errormsg = document.getElementById("errorMsg");
 let eventCode;
 
 
@@ -9,6 +10,8 @@ checkBtn.addEventListener("click", () => {
         let data = this.response;
         if (data.error) {
             console.log("Error processing event code.");
+            errormsg.innerHTML = "Not a Valid Event Code. Please Try Again.";
+            errormsg.style.color = "red";
         } else {
             console.log("Event code successfully processed.")
         }
