@@ -107,6 +107,7 @@ function buildJSON() {
     major = document.getElementById("major").value;
     emerName = document.getElementById("emerName").value;
     emerPhoneNum = document.getElementById("emerPhone").value;
+    emerContRelat = getEmerContRelat();
 
     let errors = false;
     console.log("JSON build in progress!");
