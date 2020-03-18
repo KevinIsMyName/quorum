@@ -1,15 +1,15 @@
-let username = "";
-let password = "";
+let usernameF = document.getElementById("username");
+let passwordF = document.getElementById("password");
 let login = document.getElementById("submit");
+let output = document.getElementById("output");
 
 function getCredentials() {
-    username = document.getElementById("username").value;
-    password = document.getElementById("username").value;
-    credentials = {
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("username").value;
+    return {
         user: username,
         pass: password,
     };
-    return credentials;
 }
 
 login.addEventListener("click", () => {
@@ -18,7 +18,13 @@ login.addEventListener("click", () => {
     let xhr = new XMLHttpRequest();
     xhr.addEventListener("load", () => {
         console.log("Call back received: " + this.response);
-        // TODO: do stuff to carry credentials around
+        if (this.response.error) {
+            usernameF.value = "";
+            passwordF.value = "";
+            output.innerText = "Invalid email or password.";
+        } else {
+            output.innerText = "Logging in...";
+        }
     });
     xhr.open("POST", "/loggedin");
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
