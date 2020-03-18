@@ -17,13 +17,13 @@ let filePath = "public";
 app.use(express.static(filePath));
 
 // Initialize cookie
-var sessions = require("client-sessions");
-app.use(sessions({
-    cookieName: "quorum",
-    secret: "poop",
-    duration: 60 * 60 * 1000,
-    activeDuration: 15 * 60 * 1000,
-}));
+// var sessions = require("client-sessions");
+// app.use(sessions({
+//     cookieName: "quorum",
+//     secret: "poop",
+//     duration: 60 * 60 * 1000,
+//     activeDuration: 15 * 60 * 1000,
+// }));
 
 // Start server
 const portNum = 8080;
@@ -91,9 +91,14 @@ app.get("/checkedin?", (req, res) => {
     console.log("\n\nAt /checkedin");
     let sendData = {};
     let eventCode = req.query.eventCode;
+    let userID = req.query.userID;
     sendData.error = isNaN(eventCode) || eventCode === "";
+
+    // DEBUG statements
     console.log("My response: " + sendData);
     console.log("Event code: " + eventCode);
+    console.log("User that checked in: " + userID);
+
     res.json(sendData);
 });
 
@@ -129,6 +134,8 @@ app.post("/loggedin", (req, res) => {
                 if (username === tempUser && password === tempPass) {
                     valid = true;
                     userID = row.userID;
+                    // set cookie
+                    // req.session.user = userID;
                     break;
                 }
             }
@@ -136,8 +143,7 @@ app.post("/loggedin", (req, res) => {
                 // TODO: send the user dashboard.html, and send them their userID to keep on client side
                 res.send({"error": false, "userID": userID});
                 console.log("here!!!");
-            }
-            else {
+            } else {
                 // TODO: tell the user they have bad info
                 res.send({"error": true, "userID": userID});
                 console.log("alohaaaa");
@@ -145,3 +151,13 @@ app.post("/loggedin", (req, res) => {
         });
     });
 });
+
+// app.get("/dashboard", function (req, res) {
+//     console.log("2");
+//     if (req.session && req.session.user) {
+//
+//     } else {
+//         res.redirect("/");
+//     }
+// });
+
