@@ -13,11 +13,9 @@
     </head>
     <body>
         <h1>Quorum</h1>
-        <button onclick="document.getElementById('login').style.display='block'">Login</button>
-        <div id='login' class='loginPopUp'>
-            <form class='loginPoppingUp'>
+        <div class='login'>
+            <form>
                 <div class="imageContainer">
-                    <span onclick="document.getElementById('login').style.display='none'" class="close" title="Close Login Page">&times;</span>
                     <img src="./resource/android-chrome-192x192.png" alt="logo" class="logo">
                 </div>
                 <div class="inputContainer">
@@ -26,9 +24,11 @@
                     <label>Password: </label>
                         <input type="password" id="password" placeholder="Enter Password">
                     <button type="submit" id="submit">Login</button>
-                    Don't have an account? <a href="register.html"><button class="registerButton">Register</button></a>
                 </div>
             </form>
+            <div class="register">
+                Don't have an account? <a href="register.html"><button class="registerButton">Register</button></a>
+            </div>
         </div>
 
     </body>
