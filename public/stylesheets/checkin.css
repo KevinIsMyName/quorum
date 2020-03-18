@@ -39,3 +39,10 @@ div {
     width: 25%;
     background-color: lightcoral;
 }
+
+#logo {
+    position: fixed;
+    bottom: 0;
+    right: 48%;
+
+}
