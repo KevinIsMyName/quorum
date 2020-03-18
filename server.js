@@ -47,8 +47,8 @@ app.get("/checkedin?", (req, res) => {
     let sendData = {};
     let eventCode = req.query.eventCode;
     sendData.error = isNaN(eventCode) || eventCode === "";
-    console.log(sendData);
-    console.log(eventCode);
+    console.log("My response: " + sendData);
+    console.log("Event code: " + eventCode);
     res.json(sendData);
 });
 
