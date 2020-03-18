@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width initial-scale=1">
-    <link rel="apple-touch-icon" sizes="180x180" href="resource/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="resource/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="resource/favicon-16x16.png">
-    <link rel="manifest" href="resource/site.webmanifest">
-    <script src="./scripts/checkin.js" defer></script>
-    <title>Event Check-In</title>
-</head>
-<body>
-    <h2>Enter Event Code:</h2>
-    <input type="text" id="eventCode" name="eventCode" placeholder="Event Code">
-    <br>
-    <br>
-    <div id="errorMsg"></div>
-    <br>
-    <button id="checkBtn" type="submit" value="Check-In"></button>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width initial-scale=1">
+        <link rel="apple-touch-icon" sizes="180x180" href="resource/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="resource/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="resource/favicon-16x16.png">
+        <link rel="manifest" href="resource/site.webmanifest">
+        <script src="./scripts/checkin.js" defer></script>
+        <title>Event Check-In</title>
+    </head>
+    <body>
+        <h2>Enter Event Code:</h2>
+        <input type="text" id="eventCode" name="eventCode" placeholder="Event Code"
+               onkeypress="return /\d/i.test(event.key)">
+        <br>
+        <br>
+        <div id="errorMsg"></div>
+        <br>
+        <button id="checkBtn" type="submit" value="Check-in">Check-in</button> <!-- Make the event code only numbers?-->
+    </body>
 </html>
