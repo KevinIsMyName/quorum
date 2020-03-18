@@ -32,7 +32,7 @@ login.addEventListener("click", () => {
             d.setTime(d.getTime() + (exdays*24*60*60*1000));
             var expires = "expires="+ d.toUTCString();
             document.cookie = "userID=" + userID + + ";" + expires + ": path=/";
-            window.location.replace("dashboard.html");
+            window.location.assign("dashboard.html");
         }
     });
     xhr.open("POST", "/loggedin");
