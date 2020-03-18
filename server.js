@@ -105,7 +105,7 @@ app.post("/loggedin", (req, res) => {
     let username = req.body.user;
     let password = req.body.pass;
 
-    Create connection to MySql Server
+    // Create connection to MySql Server
     let con = mysql.createConnection({
         host: "localhost",
         user: "quorum",
@@ -134,12 +134,14 @@ app.post("/loggedin", (req, res) => {
             }
             if (valid) {
                 // TODO: send the user dashboard.html, and send them their userID to keep on client side
-                res.send({error: false});
-                res.sendFile(path.join(__dirname, filePath, "dashboard.html"));
+                res.send("hello");
+                //res.sendFile(path.join(__dirname, filePath, "dashboard.html"));
+                console.log("here!!!");
             }
             else {
                 // TODO: tell the user they have bad info
                 res.send({error: true});
+                console.log("alohaaaa");
             }
         });
     });

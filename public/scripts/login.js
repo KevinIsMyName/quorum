@@ -16,7 +16,7 @@ login.addEventListener("click", () => {
     let submitData = getCredentials();
 
     let xhr = new XMLHttpRequest();
-    xhr.addEventListener("load", () => {
+    xhr.addEventListener("load", function() {
         console.log("Call back received: " + this.response);
         if (this.response.error) {
             usernameF.value = "";
