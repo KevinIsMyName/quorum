@@ -21,14 +21,17 @@ app.listen(portNum, () => {
     console.log("Listening on port " + portNum);
 });
 
+// Create connection to MySql Server
+const con = mysql.createConnection({
+    host: "localhost",
+    user: "quorum",
+    password: "quorum",
+    database: "quorum"
+});
+
 // Landing page
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, filePath, "login.html"));
-});
-
-// Sign-up page
-app.get("/register", (req, res) => {
-    res.sendFile(path.join(__dirname, filePath, "register.html"));
 });
 
 /* Sign-up page to catch POST request
@@ -40,6 +43,31 @@ app.post("/registered?", (req, res) => {
     let data = req.body;
     console.log(data);
     res.send("Server has handled POST request.");
+
+    var username = "test";
+    var password = "test";
+    var firstName = "test";
+    var lastName = "test";
+    var age = "20";
+    var gender = "test";
+    var gradDate = "test";
+    var major = "test";
+    var emerName = "test";
+    var emerPhone = "test";
+    var emerRel = "test";
+
+    // Insert new user info into the userProfiles table
+    con.connect(function(err) {
+        if (err) throw err;
+        let sql = "INSERT INTO userprofiles " +
+            "(username, password, firstName, lastName, age, gender, gradDate, major, emergencyName, emergencyPhone, emergencyRelationship) " +
+            "VALUES " +
+            "(\"" + username + "\", \"" + password + "\", \"" + firstName  + "\", \"" + lastName + "\", " + age + ", \"" + gender + "\", \"" + gradDate + "\", \"" + major + "\", \"" + emerName + "\", \"" + emerPhone + "\", \"" + emerRel + "\");";
+        con.query(sql, function (err, result) {
+            if (err) throw err;
+            console.log("Successfully added user!");
+        });
+    });
 });
 
 // Handle check in
