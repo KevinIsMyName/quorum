@@ -58,7 +58,6 @@ app.post("/registered?", (req, res) => {
     let emerPhone = data.emerCont.phoneNum;
     let emerRel = data.emerCont.relat;
 
-
     // Insert new user info into the userProfiles table
     con.connect(function(err) {
         if (err) throw err;
