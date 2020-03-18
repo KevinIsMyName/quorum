@@ -4,7 +4,7 @@ body {
     margin: 0;
 }
 
-h1 {
+h2 {
     margin-top: 0;
     text-align: center;
     padding-top: 2rem;
@@ -14,31 +14,11 @@ h1 {
     font-size: 3rem;
 }
 
-p {
-    display: flex;
-    justify-content: center;
-    margin: 3rem;
-    padding: 1rem;
-}
-
-.nav {
-    display: flex;
-    justify-content: space-evenly;
-    position: relative;
-    width: 100%;
-}
-
-button {
+#submitButton {
+    background-image: linear-gradient(to right, #62CCC5, #A8E4DF, #62CCC5);
     font-family: "Playfair Display", serif;
-    text-align: center;
-    padding: 1rem;
-    border-radius: 25px;
     font-size: 1rem;
-}
-
-#logo {
-    position: fixed;
-    bottom: 0;
-    right: 48%;
-
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
 }
