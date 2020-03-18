@@ -3,17 +3,27 @@
  * CS375/Quorum/server.js
  */
 
-// Imports
-const express = require("express");
+// Import mysql
 const mysql = require("mysql");
-const bodyParser = require("body-parser");
-const path = require("path");
 
 // Initialize server
+
+const express = require("express");
+const bodyParser = require("body-parser");
+const path = require("path");
 const app = express();
 app.use(bodyParser.json());
 let filePath = "public";
 app.use(express.static(filePath));
+
+// Initialize cookie
+var sessions = require("client-sessions");
+app.use(sessions({
+    cookieName: "quorum",
+    secret: "poop",
+    duration: 60 * 60 * 1000,
+    activeDuration: 15 * 60 * 1000,
+}));
 
 // Start server
 const portNum = 8080;
@@ -95,7 +105,7 @@ app.post("/loggedin", (req, res) => {
     let username = req.body.user;
     let password = req.body.pass;
 
-    // Create connection to MySql Server
+    Create connection to MySql Server
     let con = mysql.createConnection({
         host: "localhost",
         user: "quorum",
@@ -124,6 +134,7 @@ app.post("/loggedin", (req, res) => {
             }
             if (valid) {
                 // TODO: send the user dashboard.html, and send them their userID to keep on client side
+                res.send({error: false});
                 res.sendFile(path.join(__dirname, filePath, "dashboard.html"));
             }
             else {
