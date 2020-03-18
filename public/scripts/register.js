@@ -107,12 +107,13 @@ function buildJSON() {
     major = document.getElementById("major").value;
     emerName = document.getElementById("emerName").value;
     emerPhoneNum = document.getElementById("emerPhone").value;
+    emerContRelat = getEmerContRelat();
 
     let errors = false;
     console.log("JSON build in progress!");
     if (!isValidEmail(emailAddr) || !isValidAge(age) || !getGender() || !getEmerContRelat() || !isValidPhoneNum(emerPhoneNum) || !isConsistantPass(password, confirmPassword)) {
         errors = true;
-        return;
+        // return;
     }
     submitData.user.username = username;
     submitData.user.email = emailAddr;
@@ -136,8 +137,7 @@ submitButton.addEventListener("click", () => {
 
     let xhr = new XMLHttpRequest;
     xhr.addEventListener("load", function () {
-        console.log("Call back received");
-        console.log(this.response);
+        console.log("Call back received: " + this.response);
     });
     xhr.open("POST", "/registered");
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
