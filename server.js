@@ -31,7 +31,9 @@ app.get("/register", (req, res) => {
     res.sendFile(path.join(__dirname, filePath, "register.html"));
 });
 
-// Sign-up page to catch POST request
+/* Sign-up page to catch POST request
+ * This should get the profile information and upload it to the MySQL database
+ */
 app.post("/registered?", (req, res) => {
     res.sendFile(path.join(__dirname, filePath, "register.html"));
     console.log("POST request received at /registered?");
@@ -41,9 +43,16 @@ app.post("/registered?", (req, res) => {
 });
 
 // Handle check in
-app.get("/checkin", (req, res) => {
+app.get("/checkin?", (req, res) => {
+    let sendData = {};
     let eventCode = req.query.eventCode;
-    res.send(eventCode);
+    if (isNaN(eventCode) || eventCode === "") {
+        sendData.error = true;
+    } else {
+        sendData.error = false;
+    }
+    console.log(sendData);
     console.log(eventCode);
+    res.json(sendData);
 });
 
