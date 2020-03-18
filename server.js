@@ -38,6 +38,7 @@ app.get("/", (req, res) => {
  * This should get the profile information and upload it to the MySQL database
  */
 app.post("/registered?", (req, res) => {
+    console.log("\n\nAt /registered");
     res.sendFile(path.join(__dirname, filePath, "register.html"));
     console.log("POST request received at /registered?");
     let data = req.body;
@@ -71,16 +72,21 @@ app.post("/registered?", (req, res) => {
 });
 
 // Handle check in
-app.get("/checkin?", (req, res) => {
+app.get("/checkedin?", (req, res) => {
+    console.log("\n\nAt /checkedin");
     let sendData = {};
     let eventCode = req.query.eventCode;
-    if (isNaN(eventCode) || eventCode === "") {
-        sendData.error = true;
-    } else {
-        sendData.error = false;
-    }
-    console.log(sendData);
-    console.log(eventCode);
+    sendData.error = isNaN(eventCode) || eventCode === "";
+    console.log("My response: " + sendData);
+    console.log("Event code: " + eventCode);
     res.json(sendData);
 });
 
+// Handle log in
+app.post("/loggedin", (req, res) => {
+    console.log("\n\nAt /loggedin");
+    console.log(req.body);
+    // TODO: DO SQL Stuff to check if valid user
+
+    // TODO: Tell user that he is logged in
+});
