@@ -36,6 +36,8 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, filePath, "login.html"));
 });
 
+
+// REGISTERING ENDPOINT
 /* Sign-up page to catch POST request
  * This should get the profile information and upload it to the MySQL database
  */
@@ -87,23 +89,64 @@ app.post("/registered?", (req, res) => {
     });
 });
 
-// Handle check in
+// CHECKIN ENDPOINT
 app.get("/checkedin?", (req, res) => {
     console.log("\n\nAt /checkedin");
-    let sendData = {};
+
+    // Parse post request
     let eventCode = req.query.eventCode;
     let userID = req.query.userID;
-    sendData.error = isNaN(eventCode) || eventCode === "";
 
-    // DEBUG statements
-    console.log("My response: " + sendData);
-    console.log("Event code: " + eventCode);
-    console.log("User that checked in: " + userID);
+    // Create MySQL Connection
+    let con = mysql.createConnection({
+        host: "localhost",
+        user: "quorum",
+        password: "quorum",
+        database: "quorum"
+    });
 
-    res.json(sendData);
+    let valid = false;
+    let eventID = NaN;
+    let eventName = "";
+
+    con.connect(function (err) {
+        if (err) throw err;
+
+        // Check if the event code associates to something
+        let checksql = "SELECT eventID, eventName, eventCode FROM events;";
+        con.query(checksql, function (err, result) {
+            if (err) throw err;
+            for (let i = 0; i < result.length; i++) {
+                let row = result[i];
+                let tempCode = row.eventCode;
+                if (eventCode === tempCode) {
+                    valid = true;
+                    eventID = row.eventID;
+                    eventName = row.eventName;
+                    break;
+                }
+            }
+
+            // If the event code is valid, insert stuff in, otherwise return to the user bad stuff
+            if (valid) {
+                // If the event code works, then add into eventAttendance
+                let insertsql = "INSERT INTO eventattendance" +
+                    "(userID, eventID)" +
+                    "VALUES" +
+                    "(\"" + userID + "\", \"" + eventID + "\");";
+                con.query(insertsql, function (err, result) {
+                    if (err) throw err;
+                    console.log("Successfully added an attendance row!");
+                });
+                res.send({"error": false, "eventName": eventName});
+            } else {
+                res.send({"error": true, "eventName": eventName});
+            }
+        });
+    });
 });
 
-// Handle log in
+// LOGIN ENDPOINT
 app.post("/loggedin", (req, res) => {
     console.log("\n\nAt /loggedin");
     console.log(req.body);
@@ -143,11 +186,9 @@ app.post("/loggedin", (req, res) => {
             if (valid) {
                 // TODO: send the user dashboard.html, and send them their userID to keep on client side
                 res.send({"error": false, "userID": userID});
-                console.log("here!!!");
             } else {
                 // TODO: tell the user they have bad info
                 res.send({"error": true, "userID": userID});
-                console.log("alohaaaa");
             }
         });
     });

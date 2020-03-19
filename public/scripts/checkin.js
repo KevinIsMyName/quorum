@@ -20,17 +20,18 @@ checkBtn.addEventListener("click", () => {
     eventCode = document.getElementById("eventCode").value;
     let xhr = new XMLHttpRequest();
     xhr.addEventListener("load", function () {
-        let data = this.response;
-        if (data.error) {
+        let resp = JSON.parse(this.response);
+        let eventName = resp.eventName;
+        if (resp.error) {
             console.log("Error processing event code.");
-            errormsg.innerHTML = "Not a valid event code. Code must be numeric";
+            errormsg.innerHTML = "Not a valid event code.";
             errormsg.style.color = "red";
             return -1;
         } else {
-            console.log("Event code successfully processed.")
+            errormsg.innerHTML = "Successfully checked into " + eventName +"!";
+            errormsg.style.color = "red";
         }
     });
-    xhr.responseType = "json";
     let queryStr = "checkedin?eventCode=" + eventCode;
     if (userID !== "notLoggedIn") {
         queryStr += "&userID=" + userID;
