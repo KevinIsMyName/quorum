@@ -31,7 +31,7 @@ login.addEventListener("click", () => {
             var d = new Date();
             d.setTime(d.getTime() + (4*24*60*60*1000));
             var expires = "expires="+ d.toUTCString();
-            document.cookie = "userID=" + userID + + ";" + expires + ": path=/";
+            document.cookie = encodeURIComponent("userID=" + userID + + ";" + expires + ": path=/");
             window.location.assign("dashboard.html");
         }
     });
