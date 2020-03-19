@@ -194,12 +194,11 @@ app.post("/loggedin", (req, res) => {
     });
 });
 
-// app.get("/dashboard", function (req, res) {
-//     console.log("2");
-//     if (req.session && req.session.user) {
-//
-//     } else {
-//         res.redirect("/");
-//     }
-// });
 
+// INVOLVEMENT ENDPOINT
+app.get("/involve", (req, res) => {
+    console.log("\n\nAt /loggedin");
+
+    let userID = req.query.userID;
+    console.log("User ID: " + userID);
+});

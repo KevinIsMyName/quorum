@@ -6,10 +6,17 @@ function getCookieValue(a) {
     return b ? b.pop() : '';
 }
 window.onload = (event) => {
-    userID = getCookieValue("userID");
+    let userID = getCookieValue("userID");
     if (userID === "") {
         window.location.assign("/");
     }
     console.log("User: " + userID);
-    // do user authentication, load the proper content on this webpage
+
+    let xhr = new XMLHttpRequest();
+    xhr.addEventListener("load", function() {
+        // load the proper content on this webpage
+    });
+    let queryStr = "/involve?userID=" + userID;
+    xhr.open("GET", queryStr);
+    xhr.send();
 };
