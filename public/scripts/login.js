@@ -27,7 +27,6 @@ login.addEventListener("click", () => {
             let userID = resp.userID;
             output.innerText = "Logging in...";
             console.log("Received unique user ID from server.");
-            // TODO: redirect the user to another html page, and store the userID somewhere?
             var d = new Date();
             d.setTime(d.getTime() + (4 * 24 * 60 * 60 * 1000));
             var expires = "expires=" + d.toUTCString();
