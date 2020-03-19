@@ -14,7 +14,7 @@ window.onload = (event) => {
 
     let xhr = new XMLHttpRequest();
     xhr.addEventListener("load", function() {
-        // load the proper content on this webpage
+        console.log(JSON.parse(this.response));
     });
     let queryStr = "/involve?userID=" + userID;
     xhr.open("GET", queryStr);

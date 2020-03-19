@@ -201,4 +201,64 @@ app.get("/involve", (req, res) => {
 
     let userID = req.query.userID;
     console.log("User ID: " + userID);
+
+    // Create MySQL Connection
+    let con = mysql.createConnection({
+        host: "localhost",
+        user: "quorum",
+        password: "quorum",
+        database: "quorum"
+    });
+
+
+    con.connect(function (err) {
+        if (err) throw err;
+
+        // Get all eventIDs for events that userID attended
+        let sql1 = "SELECT userID, eventID FROM eventattendance;";
+        con.query(sql1, function (err, result) {
+            if (err) throw err;
+
+            let idList = [];
+            let eventList = [];
+
+            for (let i = 0; i < result.length; i++) {
+                let row = result[i];
+                let tempUserID = row.userID;
+                if (userID === tempUserID) {
+                    idList.push(row.eventID);
+                }
+            }
+
+            // Get information for each event the userID attended
+            for (let j = 0; j < idList.length; j++) {
+                let tempID = idList[j];
+                let sql2 = "SELECT eventID, eventName, eventHostOrg, date, location FROM events WHERE eventID=" + tempID + ";";
+                con.query(sql2, function (err, result) {
+                    if (err) throw err;
+                    eventList.push(result[0]);
+                    if (j === (idList.length - 1)) {
+                        res.send(eventList);
+                    }
+                });
+
+            }
+            //console.log(eventList);
+            // If the event code is valid, insert stuff in, otherwise return to the user bad stuff
+            /*if (valid) {
+                // If the event code works, then add into eventAttendance
+                let insertsql = "INSERT INTO eventattendance" +
+                    "(userID, eventID)" +
+                    "VALUES" +
+                    "(\"" + userID + "\", \"" + eventID + "\");";
+                con.query(insertsql, function (err, result) {
+                    if (err) throw err;
+                    console.log("Successfully added an attendance row!");
+                });
+                res.send({"error": false, "eventName": eventName});
+            } else {
+                res.send({"error": true, "eventName": eventName});
+            } */
+        });
+    });
 });
