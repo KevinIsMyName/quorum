@@ -138,6 +138,11 @@ submitButton.addEventListener("click", () => {
     let xhr = new XMLHttpRequest;
     xhr.addEventListener("load", function () {
         console.log("Call back received: " + this.response);
+        if (this.response.error) {
+            alert("Registration successful!")
+        } else {
+            alert("Registration failed.");
+        }
     });
     xhr.open("POST", "/registered");
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
