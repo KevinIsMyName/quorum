@@ -16,7 +16,7 @@ login.addEventListener("click", () => {
     let submitData = getCredentials();
 
     let xhr = new XMLHttpRequest();
-    xhr.addEventListener("load", function() {
+    xhr.addEventListener("load", function () {
         console.log("Call back received: " + this.response);
         let resp = JSON.parse(this.response);
         if (resp.error) {
@@ -29,9 +29,9 @@ login.addEventListener("click", () => {
             console.log("Received unique user ID from server.");
             // TODO: redirect the user to another html page, and store the userID somewhere?
             var d = new Date();
-            d.setTime(d.getTime() + (4*24*60*60*1000));
-            var expires = "expires="+ d.toUTCString();
-            document.cookie = encodeURIComponent("userID=" + userID + + ";" + expires + ": path=/");
+            d.setTime(d.getTime() + (4 * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + d.toUTCString();
+            document.cookie = "userID=" + userID + "%3B" + expires + "%3Bpath=/";
             window.location.assign("dashboard.html");
         }
     });

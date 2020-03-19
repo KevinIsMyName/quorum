@@ -82,6 +82,7 @@ app.post("/registered?", (req, res) => {
         con.query(sql, function (err, result) {
             if (err) throw err;
             console.log("Successfully added user!");
+            // TODO: Send to end-user that registration was successful.
         });
     });
 });
