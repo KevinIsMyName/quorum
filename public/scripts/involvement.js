@@ -21,7 +21,7 @@ window.onload = (event) => {
         let data = JSON.parse(this.response);
         if (data.length > 0) {
             for (let i = 0; i < data.length; i++) {
-                let eventName = data[i].eventID;
+                let eventName = data[i].eventName;
                 let hostOrg = data[i].eventHostOrg;
                 let loc = data[i].location;
 
@@ -35,7 +35,9 @@ window.onload = (event) => {
 
                 let event = document.createElement("div");
                 event.innerHTML = eventName + " hosted by " + hostOrg + " on " + month + ", " + date + ", " + year;
-                output.append();
+                console.log(event.innerHTML);
+                output.append(document.createElement("br"));
+                output.append(event);
             }
         } else {
             output.innerText = "Oops! Doesn't look like you've attended any events&#128546;";
